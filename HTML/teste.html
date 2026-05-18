@@ -1,0 +1,2289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ══ SEO PREMIUM ══ -->
+  <title>Pizzaria 3 em 1 | Melhor Rodízio de Pizza em São Bernardo do Campo — ABC Paulista</title>
+  <meta name="description" content="A Pizzaria 3 em 1 é referência em rodízio de pizzas, esfihas e fogazzas em São Bernardo do Campo. Mais de 20 anos de tradição no ABC Paulista. Delivery, rodízio e ambiente familiar. (11) 99728-1316.">
+  <meta name="keywords" content="pizzaria são bernardo do campo, rodízio pizza ABC paulista, delivery pizza SBC, pizzaria 3 em 1, esfiha são bernardo, fogazza SBC, melhor pizzaria ABC, rodízio pizza paulicéia, pizza delivery são bernardo">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Pizzaria 3 em 1">
+  <link rel="canonical" href="https://www.3em1pizzaria.com.br/">
+
+  <!-- ══ OPEN GRAPH ══ -->
+  <meta property="og:type" content="restaurant">
+  <meta property="og:title" content="Pizzaria 3 em 1 — Coma. Beba. Relaxe. | São Bernardo do Campo">
+  <meta property="og:description" content="O melhor rodízio de pizzas, esfihas e fogazzas do ABC Paulista. Mais de 20 anos de tradição em São Bernardo do Campo. Reserve sua mesa!">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1200&auto=format&fit=crop">
+  <meta property="og:url" content="https://www.3em1pizzaria.com.br/">
+  <meta property="og:site_name" content="Pizzaria 3 em 1">
+  <meta property="og:locale" content="pt_BR">
+
+  <!-- ══ TWITTER CARD ══ -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pizzaria 3 em 1 — São Bernardo do Campo">
+  <meta name="twitter:description" content="O melhor rodízio de pizzas, esfihas e fogazzas do ABC Paulista. Tradição desde 1993.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1200&auto=format&fit=crop">
+
+  <!-- ══ FONTS ══ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- ══ LOCAL BUSINESS SCHEMA ══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Pizzaria 3 em 1",
+    "image": "https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1200",
+    "description": "Pizzaria especializada em rodízio de pizzas, esfihas e fogazzas em São Bernardo do Campo, ABC Paulista.",
+    "url": "https://www.3em1pizzaria.com.br",
+    "telephone": ["+55-11-4178-1950", "+55-11-99728-1316"],
+    "email": "contato@3em1pizzaria.com.br",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua Pacaembú, 283",
+      "addressLocality": "São Bernardo do Campo",
+      "addressRegion": "SP",
+      "postalCode": "09778-000",
+      "addressCountry": "BR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -23.6939,
+      "longitude": -46.5649
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Sunday"], "opens": "18:00", "closes": "23:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "18:00", "closes": "23:59" }
+    ],
+    "servesCuisine": ["Pizza", "Esfiha", "Fogazza", "Comida Brasileira"],
+    "priceRange": "$$",
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "500" },
+    "hasMenu": "https://www.3em1pizzaria.com.br/cardapio.html"
+  }
+  </script>
+
+  <style>
+    /* ════════════════════════════════════════
+       DESIGN TOKENS
+    ════════════════════════════════════════ */
+    :root {
+      --gold: #f39c12;
+      --gold-light: #f5b942;
+      --gold-dim: rgba(243,156,18,0.12);
+      --red: #c0392b;
+      --dark: #050505;
+      --dark-2: #0a0a0a;
+      --dark-3: #111;
+      --card-bg: #111;
+      --border: #1e1e1e;
+      --border-2: #2a2a2a;
+      --text-muted: #888;
+      --text-sub: #bbb;
+      --header-h: 72px;
+      --radius: 20px;
+      --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    /* ════════════════════════════════════════
+       RESET & BASE
+    ════════════════════════════════════════ */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Raleway', sans-serif;
+      background: var(--dark);
+      color: #fff;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+    button { cursor: pointer; font-family: inherit; }
+
+    /* ════════════════════════════════════════
+       SCROLL REVEAL — hidden by default
+    ════════════════════════════════════════ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.7s var(--transition), transform 0.7s var(--transition);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ════════════════════════════════════════
+       GOLD DIVIDER
+    ════════════════════════════════════════ */
+    .gold-divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 0 auto 20px;
+      max-width: 200px;
+    }
+    .gold-divider::before,
+    .gold-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+    }
+    .gold-divider span { color: var(--gold); font-size: 18px; }
+
+    /* ════════════════════════════════════════
+       HEADER PREMIUM
+    ════════════════════════════════════════ */
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      background: rgba(5,5,5,0.85);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      transition: padding var(--transition), background var(--transition);
+    }
+    header.scrolled {
+      background: rgba(5,5,5,0.97);
+      border-bottom-color: var(--border-2);
+    }
+
+    nav {
+      max-width: 1300px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 24px;
+      transition: padding var(--transition);
+    }
+    header.scrolled nav { padding: 10px 24px; }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-icon { width: 52px; height: 52px; flex-shrink: 0; transition: transform var(--transition); }
+    .logo-wrap:hover .logo-icon { transform: rotate(-6deg) scale(1.05); }
+
+    .logo-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      color: var(--gold);
+      line-height: 1.1;
+    }
+    .logo-text span {
+      display: block;
+      font-size: 11px;
+      color: var(--text-muted);
+      font-family: 'Raleway', sans-serif;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+    .nav-links a {
+      color: var(--text-sub);
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.8px;
+      transition: color var(--transition);
+      text-transform: uppercase;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: width var(--transition);
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-cta {
+      background: var(--red) !important;
+      color: #fff !important;
+      padding: 9px 22px !important;
+      border-radius: 30px;
+      font-size: 13px;
+      position: relative;
+      overflow: hidden;
+    }
+    .nav-cta::after { display: none !important; }
+    .nav-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+      z-index: 0;
+    }
+    .nav-cta:hover::before { transform: scaleX(1); }
+    .nav-cta:hover { color: #000 !important; }
+    .nav-cta span { position: relative; z-index: 1; }
+
+    /* Mobile button */
+    .pizza-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 28px;
+      line-height: 1;
+      padding: 6px;
+      transition: transform var(--transition);
+    }
+    .pizza-menu-btn:hover { transform: rotate(-10deg) scale(1.1); }
+
+    /* ════════════════════════════════════════
+       MOBILE NAV
+    ════════════════════════════════════════ */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(5,5,5,0.98);
+      z-index: 2000;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      backdrop-filter: blur(20px);
+    }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      color: #fff;
+      transition: color var(--transition), letter-spacing var(--transition);
+    }
+    .mobile-nav a:hover { color: var(--gold); letter-spacing: 2px; }
+    .mobile-nav-close {
+      position: absolute;
+      top: 20px; right: 24px;
+      font-size: 36px;
+      background: none;
+      border: none;
+      color: var(--gold);
+    }
+
+    /* ════════════════════════════════════════
+       HERO PREMIUM
+    ════════════════════════════════════════ */
+    .hero {
+      height: 100vh;
+      min-height: 600px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1600&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.06);
+      transition: transform 8s ease-out;
+      will-change: transform;
+    }
+    .hero-bg.loaded { transform: scale(1); }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.5) 0%,
+        rgba(0,0,0,0.7) 50%,
+        rgba(0,0,0,0.88) 100%
+      );
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 820px;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.3s forwards;
+    }
+    .hero-eyebrow::before,
+    .hero-eyebrow::after { content: '✦'; font-size: 8px; }
+
+    .hero-content h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(52px, 9vw, 96px);
+      color: var(--gold);
+      line-height: 1;
+      letter-spacing: -1px;
+      text-shadow: 0 4px 40px rgba(0,0,0,0.8);
+      opacity: 0;
+      animation: fadeUp 0.9s 0.5s forwards;
+    }
+    .hero-content p {
+      font-size: clamp(16px, 2vw, 20px);
+      color: #ddd;
+      margin: 24px auto 40px;
+      max-width: 580px;
+      line-height: 1.7;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.7s forwards;
+    }
+    .hero-btns {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.9s forwards;
+    }
+
+    /* Scroll indicator */
+    .hero-scroll {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.4);
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      animation: bounce 2s infinite;
+    }
+    .hero-scroll svg { width: 20px; height: 20px; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ════════════════════════════════════════
+       BUTTONS PREMIUM
+    ════════════════════════════════════════ */
+    .btn {
+      background: var(--red);
+      color: white;
+      padding: 16px 38px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-family: 'Raleway', sans-serif;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      letter-spacing: 0.5px;
+      font-size: 15px;
+      border: 2px solid transparent;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+    .btn:hover { color: #000; border-color: var(--gold); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(243,156,18,0.3); }
+    .btn:hover::before { opacity: 1; }
+    .btn span, .btn-icon { position: relative; z-index: 1; }
+
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid rgba(243,156,18,0.6);
+      color: var(--gold);
+      padding: 14px 36px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-family: 'Raleway', sans-serif;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+    }
+    .btn-outline:hover { background: var(--gold); color: #000; border-color: var(--gold); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(243,156,18,0.2); }
+
+    /* ════════════════════════════════════════
+       SECTIONS
+    ════════════════════════════════════════ */
+    section { padding: 100px 20px; }
+    .container { max-width: 1300px; margin: auto; }
+
+    .section-label {
+      text-align: center;
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 4vw, 48px);
+      text-align: center;
+      margin-bottom: 16px;
+      color: #fff;
+    }
+    .title em { color: var(--gold); font-style: normal; }
+    .title-sub {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 16px;
+      max-width: 500px;
+      margin: 0 auto 60px;
+      line-height: 1.6;
+    }
+
+    /* ════════════════════════════════════════
+       SOBRE
+    ════════════════════════════════════════ */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .about-text p {
+      line-height: 1.9;
+      color: var(--text-sub);
+      font-size: 17px;
+      margin-bottom: 18px;
+    }
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-top: 36px;
+    }
+    .stat {
+      background: var(--dark-3);
+      padding: 24px 16px;
+      text-align: center;
+    }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 38px;
+      color: var(--gold);
+      display: block;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat-label {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+    .about-img-wrap {
+      position: relative;
+    }
+    .about-img {
+      border-radius: var(--radius);
+      height: 500px;
+      width: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .about-img-badge {
+      position: absolute;
+      bottom: -20px;
+      left: -20px;
+      background: var(--gold);
+      color: #000;
+      border-radius: 16px;
+      padding: 16px 20px;
+      font-weight: 700;
+      font-size: 13px;
+      line-height: 1.4;
+      box-shadow: 0 8px 30px rgba(243,156,18,0.4);
+    }
+    .about-img-badge strong { display: block; font-size: 22px; font-family: 'Playfair Display', serif; }
+
+    /* ════════════════════════════════════════
+       CARROSSEL
+    ════════════════════════════════════════ */
+    .carousel-section {
+      background: var(--dark-2);
+      padding: 80px 0;
+      overflow: hidden;
+    }
+    .carousel-section .title { margin-bottom: 40px; }
+    .carousel-wrapper {
+      position: relative;
+      max-width: 1100px;
+      margin: auto;
+      padding: 0 60px;
+    }
+    .carousel-track-outer {
+      overflow: hidden;
+      border-radius: 24px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+    }
+    .carousel-track {
+      display: flex;
+      transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);
+    }
+    .carousel-slide { min-width: 100%; position: relative; }
+    .carousel-slide img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      display: block;
+    }
+    .carousel-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.88));
+      padding: 60px 36px 28px;
+      font-size: 18px;
+      color: #fff;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(5,5,5,0.7);
+      border: 1px solid rgba(243,156,18,0.4);
+      color: var(--gold);
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      font-size: 20px;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      backdrop-filter: blur(8px);
+    }
+    .carousel-btn:hover { background: var(--gold); color: #000; border-color: var(--gold); transform: translateY(-50%) scale(1.08); }
+    .carousel-btn.prev { left: 8px; }
+    .carousel-btn.next { right: 8px; }
+    .carousel-dots { display: flex; justify-content: center; gap: 8px; margin-top: 24px; }
+    .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--border-2);
+      transition: all 0.3s;
+      border: none;
+    }
+    .dot.active { background: var(--gold); width: 24px; border-radius: 4px; }
+
+    /* ════════════════════════════════════════
+       ESPECIALIDADES
+    ════════════════════════════════════════ */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+      gap: 28px;
+    }
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: border-color var(--transition), box-shadow var(--transition);
+      position: relative;
+    }
+    .card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: var(--radius);
+      box-shadow: inset 0 0 0 1px rgba(243,156,18,0);
+      transition: box-shadow var(--transition);
+      pointer-events: none;
+    }
+    .card:hover { border-color: rgba(243,156,18,0.5); box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(243,156,18,0.1); }
+    .card:hover::after { box-shadow: inset 0 0 0 1px rgba(243,156,18,0.2); }
+    .card-img-wrap { position: relative; overflow: hidden; }
+    .card img { height: 220px; width: 100%; object-fit: cover; transition: transform 0.6s ease; }
+    .card:hover img { transform: scale(1.04); }
+    .card-content { padding: 24px; }
+    .card-content h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--gold);
+      margin-bottom: 10px;
+      font-size: 22px;
+    }
+    .card-content p { color: var(--text-sub); line-height: 1.6; font-size: 15px; }
+
+    /* ════════════════════════════════════════
+       RODÍZIOS
+    ════════════════════════════════════════ */
+    .rodizios {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px,1fr));
+      gap: 30px;
+    }
+    .rodizio-box {
+      background: linear-gradient(145deg, #0f0f0f, #181818);
+      border: 1px solid var(--border-2);
+      border-radius: 24px;
+      overflow: hidden;
+      transition: border-color var(--transition), box-shadow var(--transition);
+      position: relative;
+    }
+    .rodizio-box::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+    .rodizio-box:hover { border-color: rgba(243,156,18,0.3); box-shadow: 0 24px 60px rgba(0,0,0,0.5), 0 0 40px rgba(243,156,18,0.05); }
+    .rodizio-box:hover::before { opacity: 1; }
+    .rodizio-box-img-wrap { position: relative; overflow: hidden; }
+    .rodizio-box img { height: 280px; width: 100%; object-fit: cover; transition: transform 0.6s ease; display: block; }
+    .rodizio-box:hover img { transform: scale(1.03); }
+    .rodizio-badge {
+      position: absolute;
+      top: 16px; right: 16px;
+      background: var(--gold);
+      color: #000;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .rodizio-content { padding: 30px; }
+    .rodizio-content h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 30px;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .rodizio-content p { color: var(--text-sub); line-height: 1.7; font-size: 15px; }
+    .price {
+      font-size: 48px;
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin: 18px 0;
+      font-weight: 900;
+      font-family: 'Playfair Display', serif;
+      display: inline-block;
+    }
+    .rodizio-alert {
+      background: rgba(192,57,43,0.1);
+      border: 1px solid rgba(192,57,43,0.25);
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: 13px;
+      margin-bottom: 10px;
+      color: #ddd;
+    }
+    .rodizio-drinks {
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    /* Birthday banner */
+    .birthday {
+      background:
+        linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.82)),
+        url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1600&auto=format&fit=crop') center/cover;
+      text-align: center;
+      border-radius: 24px;
+      padding: 90px 30px;
+      margin-top: 50px;
+      border: 1px solid rgba(243,156,18,0.15);
+      position: relative;
+      overflow: hidden;
+    }
+    .birthday::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(243,156,18,0.05) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .birthday h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 5vw, 50px);
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .birthday p { max-width: 700px; margin: auto; line-height: 1.8; font-size: 17px; color: #ddd; }
+
+    /* ════════════════════════════════════════
+       MENU CTA SECTION
+    ════════════════════════════════════════ */
+    .menu-cta-section {
+      background: linear-gradient(135deg, #0d0d0d 0%, #141414 100%);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+      padding: 90px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .menu-cta-section::before {
+      content: '';
+      position: absolute;
+      top: -100px; left: 50%;
+      transform: translateX(-50%);
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(243,156,18,0.04) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .menu-cta-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 4vw, 50px);
+      color: #fff;
+      margin-bottom: 16px;
+    }
+    .menu-cta-section h2 em { color: var(--gold); font-style: normal; }
+    .menu-cta-section p {
+      color: var(--text-muted);
+      font-size: 17px;
+      margin-bottom: 36px;
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+    .menu-cta-tags {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .tag {
+      background: rgba(255,255,255,0.04);
+      color: var(--text-sub);
+      padding: 7px 18px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 600;
+      border: 1px solid var(--border-2);
+      transition: var(--transition);
+    }
+    .tag:hover { background: var(--gold-dim); color: var(--gold); border-color: rgba(243,156,18,0.3); }
+
+    /* ════════════════════════════════════════
+       LOCALIZAÇÃO
+    ════════════════════════════════════════ */
+    .location-section {
+      background: var(--dark-2);
+      padding: 100px 20px;
+    }
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+      max-width: 1300px;
+      margin: auto;
+    }
+    .location-map {
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      height: 400px;
+      background: #111;
+      position: relative;
+    }
+    .location-map iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      filter: grayscale(60%) invert(90%) hue-rotate(180deg);
+    }
+    .location-map-overlay {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      border-radius: 24px;
+      box-shadow: inset 0 0 0 1px rgba(243,156,18,0.15);
+    }
+    .location-info { padding-top: 10px; }
+    .location-info h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .location-info h2 em { color: var(--gold); font-style: normal; }
+    .location-info .loc-sub { color: var(--text-muted); font-size: 15px; margin-bottom: 36px; }
+
+    .loc-items { display: flex; flex-direction: column; gap: 20px; margin-bottom: 36px; }
+    .loc-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 18px 20px;
+      background: var(--dark-3);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      transition: border-color var(--transition);
+    }
+    .loc-item:hover { border-color: rgba(243,156,18,0.3); }
+    .loc-icon {
+      width: 40px; height: 40px;
+      background: var(--gold-dim);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .loc-text strong {
+      display: block;
+      font-size: 14px;
+      color: var(--gold);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+      font-size: 11px;
+    }
+    .loc-text p, .loc-text a {
+      color: #ddd;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+    .loc-text a:hover { color: var(--gold); }
+    .loc-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .loc-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 24px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 14px;
+      transition: var(--transition);
+    }
+    .loc-btn-primary { background: var(--gold); color: #000; }
+    .loc-btn-primary:hover { background: var(--gold-light); box-shadow: 0 6px 24px rgba(243,156,18,0.4); transform: translateY(-2px); }
+    .loc-btn-secondary { background: transparent; color: var(--text-sub); border: 1px solid var(--border-2); }
+    .loc-btn-secondary:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+    /* ════════════════════════════════════════
+       AVALIAÇÕES PREMIUM
+    ════════════════════════════════════════ */
+    .reviews-header { text-align: center; margin-bottom: 50px; }
+    .google-rating {
+      display: inline-flex;
+      align-items: center;
+      gap: 20px;
+      background: var(--dark-3);
+      border: 1px solid var(--border-2);
+      border-radius: 20px;
+      padding: 20px 32px;
+      margin-top: 20px;
+    }
+    .google-logo {
+      font-size: 30px;
+      font-weight: 900;
+      background: linear-gradient(135deg,#4285f4,#ea4335,#fbbc04,#34a853);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-family: 'Playfair Display', serif;
+    }
+    .g-score { font-size: 38px; font-weight: 700; color: #fff; font-family: 'Playfair Display', serif; }
+    .g-stars { color: #fbbc04; font-size: 20px; letter-spacing: 3px; }
+    .g-count { color: var(--text-muted); font-size: 13px; }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+      gap: 22px;
+    }
+    .review-card {
+      background: var(--dark-3);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 26px;
+      transition: border-color var(--transition), box-shadow var(--transition);
+      position: relative;
+    }
+    .review-card::before {
+      content: '"';
+      position: absolute;
+      top: 16px; right: 20px;
+      font-family: 'Playfair Display', serif;
+      font-size: 60px;
+      color: var(--gold-dim);
+      line-height: 1;
+    }
+    .review-card:hover { border-color: rgba(251,188,4,0.35); box-shadow: 0 12px 40px rgba(0,0,0,0.4); }
+    .review-top {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    .review-avatar {
+      width: 46px; height: 46px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .review-name { font-weight: 700; font-size: 15px; }
+    .review-date { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+    .review-stars { color: #fbbc04; font-size: 16px; margin-bottom: 12px; letter-spacing: 2px; }
+    .review-text { color: var(--text-sub); line-height: 1.75; font-size: 14px; }
+    .review-google-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+    .review-google-badge span { font-size: 12px; color: var(--text-muted); }
+
+    /* ════════════════════════════════════════
+       CARREIRAS
+    ════════════════════════════════════════ */
+    .contact-form {
+      display: grid;
+      gap: 16px;
+      max-width: 680px;
+      margin: auto;
+    }
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select {
+      padding: 15px 20px;
+      border-radius: 14px;
+      border: 1px solid var(--border-2);
+      background: var(--dark-3);
+      color: #fff;
+      font-family: 'Raleway', sans-serif;
+      font-size: 15px;
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(243,156,18,0.1);
+    }
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder { color: var(--text-muted); }
+
+    /* ════════════════════════════════════════
+       FOOTER PREMIUM
+    ════════════════════════════════════════ */
+    footer {
+      background: #000;
+      border-top: 1px solid var(--border);
+    }
+    .footer-inner {
+      max-width: 1300px;
+      margin: auto;
+      padding: 60px 24px 40px;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 50px;
+    }
+    .footer-brand .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .footer-brand p { color: var(--text-muted); font-size: 14px; line-height: 1.8; max-width: 300px; }
+    .footer-col h4 {
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li a {
+      color: var(--text-muted);
+      font-size: 14px;
+      transition: color var(--transition);
+    }
+    .footer-col ul li a:hover { color: var(--gold); }
+    .footer-col .contact-line {
+      color: var(--text-muted);
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .footer-col .contact-line a { color: var(--text-muted); transition: color var(--transition); }
+    .footer-col .contact-line a:hover { color: var(--gold); }
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding: 20px 24px;
+      max-width: 1300px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .footer-bottom p { color: var(--text-muted); font-size: 13px; }
+    .footer-social-links {
+      display: flex;
+      gap: 12px;
+    }
+    .footer-social-links a {
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      border: 1px solid var(--border-2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 14px;
+      transition: var(--transition);
+    }
+    .footer-social-links a:hover { border-color: var(--gold); color: var(--gold); background: var(--gold-dim); }
+
+    /* ════════════════════════════════════════
+       FAB MENU
+    ════════════════════════════════════════ */
+    .fab-wrap {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      z-index: 1000;
+    }
+    .fab-top {
+      width: 45px; height: 45px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: #000;
+      border: none;
+      font-size: 20px;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(243,156,18,0.45);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s, transform 0.2s;
+    }
+    .fab-top.visible { opacity: 1; visibility: visible; }
+    .fab-top:hover { transform: scale(1.1); }
+
+    .fab-socials {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1), opacity 0.3s ease;
+    }
+    .fab-socials.open { max-height: 240px; opacity: 1; }
+
+    .fab-social-btn {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 3px 14px rgba(0,0,0,0.5);
+      transition: transform 0.2s;
+      flex-shrink: 0;
+    }
+    .fab-social-btn:hover { transform: scale(1.12); }
+    .fab-social-btn svg { width: 20px; height: 20px; }
+
+    .fab-wpp  { background: #25D366; }
+    .fab-ifood { background: #ea1d2c; }
+    .fab-insta { background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); }
+    .fab-tiktok { background: #010101; border: 1px solid #333; }
+
+    .fab-main {
+      width: 50px; height: 50px;
+      border-radius: 50%;
+      background: var(--red);
+      color: #fff;
+      border: none;
+      font-size: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(192,57,43,0.6);
+      transition: transform 0.3s, background 0.2s;
+    }
+    .fab-main:hover { background: var(--gold); color: #000; }
+    .fab-main.open { transform: rotate(45deg); background: var(--gold); color: #000; }
+
+    /* WhatsApp pulse */
+    @keyframes wpp-pulse {
+      0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
+      70% { box-shadow: 0 0 0 12px rgba(37,211,102,0); }
+      100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+    }
+    .fab-socials.open .fab-wpp { animation: wpp-pulse 2s infinite; }
+
+    /* ════════════════════════════════════════
+       RESPONSIVE
+    ════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .location-grid { grid-template-columns: 1fr; }
+      .location-map { height: 320px; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+      .footer-brand { grid-column: 1 / -1; }
+    }
+
+    @media (max-width: 900px) {
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .about-img { height: 360px; }
+      .about-img-badge { left: 0; bottom: -16px; }
+      .about-stats { grid-template-columns: repeat(3,1fr); }
+      .rodizios { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .pizza-menu-btn { display: flex; }
+      section { padding: 70px 20px; }
+      .carousel-slide img { height: 300px; }
+      .carousel-wrapper { padding: 0 50px; }
+      .birthday h2 { font-size: 30px; }
+      .menu-cta-section h2 { font-size: 30px; }
+      .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+
+    @media (max-width: 480px) {
+      .about-stats { grid-template-columns: 1fr 1fr 1fr; }
+      .loc-btns { flex-direction: column; }
+      .loc-btn { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     HEADER PREMIUM
+══════════════════════════════════════════ -->
+<header id="mainHeader" role="banner">
+  <nav aria-label="Navegação principal">
+    <div class="logo-wrap">
+      <a href="#home" aria-label="Voltar ao início">
+        <svg class="logo-icon" viewBox="0 0 110 110" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <circle cx="55" cy="55" r="52" fill="#000"/>
+          <circle cx="55" cy="55" r="52" fill="none" stroke="#f39c12" stroke-width="5"/>
+          <circle cx="55" cy="55" r="44" fill="none" stroke="#f39c12" stroke-width="1.8"/>
+          <path d="M55 22 L78 68 Q55 78 32 68 Z" fill="#f5c518"/>
+          <path d="M32 68 Q55 80 78 68" fill="none" stroke="#e8a020" stroke-width="7" stroke-linecap="round"/>
+          <line x1="55" y1="22" x2="78" y2="68" stroke="#c8860a" stroke-width="1" opacity="0.5"/>
+          <line x1="55" y1="22" x2="32" y2="68" stroke="#c8860a" stroke-width="1" opacity="0.5"/>
+          <circle cx="55" cy="50" r="4" fill="#c0392b"/>
+          <circle cx="46" cy="60" r="3" fill="#c0392b"/>
+          <circle cx="64" cy="60" r="3" fill="#c0392b"/>
+          <text x="38" y="58" text-anchor="middle" font-family="Arial Black,sans-serif" font-size="12" font-weight="900" fill="#fff">3</text>
+          <text x="72" y="58" text-anchor="middle" font-family="Arial Black,sans-serif" font-size="12" font-weight="900" fill="#fff">1</text>
+          <path id="navArcTop" d="M18,55 A37,37 0 0,1 92,55" fill="none"/>
+          <text font-family="Arial Black,sans-serif" font-size="9" font-weight="900" fill="#fff" letter-spacing="3"><textPath href="#navArcTop" startOffset="8%">PIZZARIA</textPath></text>
+          <path id="navArcBot" d="M20,60 A37,37 0 0,0 90,60" fill="none"/>
+          <text font-family="Arial,sans-serif" font-size="7.5" font-weight="700" fill="#f39c12" letter-spacing="1.5"><textPath href="#navArcBot" startOffset="14%">Desde 1993</textPath></text>
+        </svg>
+      </a>
+      <div class="logo-text" aria-label="Pizzaria 3 em 1">
+        Pizzaria 3 em 1
+        <span>Desde 1993 · SBC</span>
+      </div>
+    </div>
+
+    <div class="nav-links" role="navigation">
+      <a href="#home">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#ambiente">Ambiente</a>
+      <a href="#rodizio">Rodízios</a>
+      <a href="#localizacao">Localização</a>
+      <a href="#avaliacoes">Avaliações</a>
+      <a href="#carreiras">Carreiras</a>
+      <a href="cardapio.html" class="nav-cta" aria-label="Ver cardápio completo"><span>🍕 Cardápio</span></a>
+    </div>
+
+    <button class="pizza-menu-btn" id="pizzaMenuBtn" aria-label="Abrir menu de navegação" aria-expanded="false">
+      <span class="pizza-slice" aria-hidden="true">🍕</span>
+    </button>
+  </nav>
+</header>
+
+<!-- ══ MOBILE NAV ══ -->
+<nav class="mobile-nav" id="mobileNav" aria-label="Menu mobile" aria-hidden="true">
+  <button class="mobile-nav-close" id="mobileNavClose" aria-label="Fechar menu">✕</button>
+  <a href="#home" class="mobile-link">Início</a>
+  <a href="#sobre" class="mobile-link">Sobre</a>
+  <a href="#ambiente" class="mobile-link">Ambiente</a>
+  <a href="#rodizio" class="mobile-link">Rodízios</a>
+  <a href="#localizacao" class="mobile-link">Localização</a>
+  <a href="#avaliacoes" class="mobile-link">Avaliações</a>
+  <a href="#carreiras" class="mobile-link">Carreiras</a>
+  <a href="cardapio.html" class="mobile-link" style="color:var(--gold)">🍕 Cardápio</a>
+</nav>
+
+<!-- ══════════════════════════════════════════
+     HERO PREMIUM
+══════════════════════════════════════════ -->
+<section class="hero" id="home" aria-label="Banner principal">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow" aria-hidden="true">✦ São Bernardo do Campo · Desde 1993 ✦</div>
+    <h1>COMA.<br>BEBA.<br>RELAXE.</h1>
+    <p>Mais de 20 anos trazendo sabor, tradição e uma experiência incrível no ABC Paulista. Pizzas, esfihas e fogazzas que fazem todo mundo voltar.</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/5511997281316?text=Olá! Gostaria de fazer um pedido" class="btn" target="_blank" rel="noopener" aria-label="Fazer pedido via WhatsApp">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        <span>Fazer Pedido</span>
+      </a>
+      <a href="cardapio.html" class="btn-outline" aria-label="Ver cardápio completo">Ver Cardápio →</a>
+    </div>
+  </div>
+  <div class="hero-scroll" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14m0 0l-5-5m5 5l5-5"/></svg>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     SOBRE / HISTÓRIA
+══════════════════════════════════════════ -->
+<section id="sobre" aria-labelledby="sobre-title">
+  <div class="container">
+    <div class="gold-divider reveal"><span>✦</span></div>
+    <p class="section-label reveal">Nossa história</p>
+    <h2 class="title reveal" id="sobre-title">Tradição que vira <em>sabor</em></h2>
+    <p class="title-sub reveal">Referência no ABC Paulista em pizzas artesanais, esfihas abertas e fogazzas irresistíveis.</p>
+
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>Desde 2002, a Pizzaria 3 em 1 se tornou referência em sabor, qualidade e tradição no ABC Paulista. Somos especializados em Pizzas, Esfihas e Fogazzas, trazendo um ambiente familiar, aconchegante e uma experiência inesquecível.</p>
+        <p>Aqui você encontra receitas incríveis, ingredientes selecionados, atendimento acolhedor e aquele sabor irresistível que faz todo mundo querer voltar.</p>
+        <div class="about-stats" role="list">
+          <div class="stat" role="listitem">
+            <span class="stat-num">20+</span>
+            <span class="stat-label">Anos</span>
+          </div>
+          <div class="stat" role="listitem">
+            <span class="stat-num">500+</span>
+            <span class="stat-label">Avaliações</span>
+          </div>
+          <div class="stat" role="listitem">
+            <span class="stat-num">4.8★</span>
+            <span class="stat-label">Google</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-img-wrap reveal reveal-delay-2">
+        <img
+          class="about-img"
+          src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1200&auto=format&fit=crop"
+          alt="Pizza artesanal suculenta da Pizzaria 3 em 1"
+          loading="lazy"
+          width="600" height="500"
+        >
+        <div class="about-img-badge" aria-label="Nota 4.8 no Google">
+          <strong>4.8 ★</strong>
+          500+ avaliações<br>no Google
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     ESPECIALIDADES
+══════════════════════════════════════════ -->
+<section aria-labelledby="esp-title" style="background:var(--dark-2);">
+  <div class="container">
+    <div class="gold-divider reveal"><span>✦</span></div>
+    <p class="section-label reveal">O que servimos</p>
+    <h2 class="title reveal" id="esp-title">Especialidades <em>da Casa</em></h2>
+    <p class="title-sub reveal">Cada prato, uma tradição. Cada sabor, uma memória.</p>
+    <div class="cards">
+      <div class="card reveal reveal-delay-1">
+        <div class="card-img-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1200&auto=format&fit=crop"
+            alt="Pizzas Artesanais da Pizzaria 3 em 1"
+            loading="lazy" width="400" height="220"
+          >
+        </div>
+        <div class="card-content">
+          <h3>Pizzas Artesanais</h3>
+          <p>Pizzas recheadas, massa incrível e muito sabor em mais de 40 sabores — salgadas e doces.</p>
+        </div>
+      </div>
+      <div class="card reveal reveal-delay-2">
+        <div class="card-img-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1520201163981-8cc95007dd2e?q=80&w=1200&auto=format&fit=crop"
+            alt="Esfihas Abertas da Pizzaria 3 em 1"
+            loading="lazy" width="400" height="220"
+          >
+        </div>
+        <div class="card-content">
+          <h3>Esfihas Abertas</h3>
+          <p>Esfihas com aquele gostinho inesquecível — massa leve, recheio generoso, do jeito que você gosta.</p>
+        </div>
+      </div>
+      <div class="card reveal reveal-delay-3">
+        <div class="card-img-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?q=80&w=1200&auto=format&fit=crop"
+            alt="Fogazzas crocantes da Pizzaria 3 em 1"
+            loading="lazy" width="400" height="220"
+          >
+        </div>
+        <div class="card-content">
+          <h3>Fogazzas</h3>
+          <p>Muito recheio e crocância. Quando o assunto é fogazza, prepare-se para se surpreender.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     CARROSSEL DE AMBIENTE
+══════════════════════════════════════════ -->
+<section class="carousel-section" id="ambiente" aria-labelledby="amb-title">
+  <div class="gold-divider reveal"><span>✦</span></div>
+  <p class="section-label reveal">Nosso espaço</p>
+  <h2 class="title reveal" id="amb-title">Conheça Nosso <em>Ambiente</em></h2>
+  <div class="carousel-wrapper">
+    <div class="carousel-track-outer">
+      <div class="carousel-track" id="carouselTrack" role="list">
+        <div class="carousel-slide" role="listitem">
+          <img src="https://lh3.googleusercontent.com/p/AF1QipMaxsBvQ3MNzQyXONBn_oyiDtg8YGVKe0jQeLxu=s680-w680-h510-rw" alt="Salão principal — ambiente familiar e aconchegante" loading="lazy" width="1100" height="520">
+          <div class="carousel-caption">Salão principal — ambiente familiar e aconchegante</div>
+        </div>
+        <div class="carousel-slide" role="listitem">
+          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1600&auto=format&fit=crop" alt="Mesas e decoração pensadas para o seu conforto" loading="lazy" width="1100" height="520">
+          <div class="carousel-caption">Decoração pensada para o seu conforto</div>
+        </div>
+        <div class="carousel-slide" role="listitem">
+          <img src="https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?q=80&w=1600&auto=format&fit=crop" alt="Pizzas artesanais saindo do forno" loading="lazy" width="1100" height="520">
+          <div class="carousel-caption">Nossas pizzas artesanais saindo do forno</div>
+        </div>
+        <div class="carousel-slide" role="listitem">
+          <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=1600&auto=format&fit=crop" alt="Nossa equipe pronta para te receber" loading="lazy" width="1100" height="520">
+          <div class="carousel-caption">Nossa equipe pronta para te receber</div>
+        </div>
+        <div class="carousel-slide" role="listitem">
+          <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?q=80&w=1600&auto=format&fit=crop" alt="Esfihas abertas com sabores irresistíveis" loading="lazy" width="1100" height="520">
+          <div class="carousel-caption">Esfihas abertas com sabores irresistíveis</div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-btn prev" id="carouselPrev" aria-label="Slide anterior">‹</button>
+    <button class="carousel-btn next" id="carouselNext" aria-label="Próximo slide">›</button>
+  </div>
+  <div class="carousel-dots" id="carouselDots" role="tablist" aria-label="Slides do carrossel"></div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     RODÍZIOS
+══════════════════════════════════════════ -->
+<section id="rodizio" aria-labelledby="rod-title">
+  <div class="container">
+    <div class="gold-divider reveal"><span>✦</span></div>
+    <p class="section-label reveal">Nossos planos</p>
+    <h2 class="title reveal" id="rod-title">Escolha seu <em>Rodízio</em></h2>
+    <p class="title-sub reveal">Pizza, esfiha e fogazza sem limite. Coma até o último sabor.</p>
+
+    <div class="rodizios">
+      <div class="rodizio-box reveal reveal-delay-1">
+        <div class="rodizio-box-img-wrap">
+          <img src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?q=80&w=1200&auto=format&fit=crop" alt="Rodízio Tradicional da Pizzaria 3 em 1" loading="lazy" width="600" height="280">
+          <span class="rodizio-badge">Popular</span>
+        </div>
+        <div class="rodizio-content">
+          <h3>Rodízio Tradicional</h3>
+          <p>Rodízio completo com pizzas, esfihas e fogazzas incríveis. Bebidas vendidas separadamente.</p>
+          <div class="price" aria-label="Preço: R$ 54,90">R$ 54,90</div>
+          <div class="rodizio-alert">⚠️ Bebidas <strong>NÃO inclusas</strong>. Consulte nosso cardápio de bebidas.</div>
+          <p class="rodizio-drinks">Bebidas disponíveis para compra: refrigerante lata, água, água com gás, H2O, cervejas, sucos e drinks.</p>
+        </div>
+      </div>
+      <div class="rodizio-box reveal reveal-delay-2">
+        <div class="rodizio-box-img-wrap">
+          <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?q=80&w=1200&auto=format&fit=crop" alt="Rodízio Premium da Pizzaria 3 em 1" loading="lazy" width="600" height="280">
+          <span class="rodizio-badge" style="background:#fff;color:#000;">Premium</span>
+        </div>
+        <div class="rodizio-content">
+          <h3>Rodízio Premium</h3>
+          <p>Rodízio completo com bebidas inclusas. Refrigerantes, chá e água á vontade conforme disponibilidade.</p>
+          <div class="price" aria-label="Preço: R$ 69,90">R$ 69,90</div>
+          <p style="color:var(--text-sub);font-size:14px;">Coca-Cola, Coca Zero, Fanta, Sprite, Guaraná e outras opções.</p>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    
+<div class="rodizio-box reveal reveal-delay-3">
+  <div class="rodizio-box-img-wrap">
+    <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?q=80&w=1200&auto=format&fit=crop" alt="Pizza à la carte Pizzaria 3 em 1" loading="lazy" width="600" height="280">
+    <span class="rodizio-badge" style="background:linear-gradient(135deg,#f39c12,#e67e22);color:#000;">À La Carte</span>
+  </div>
+  <div class="rodizio-content">
+    <h3>À La Carte</h3>
+    <p>Prefere escolher? Aqui você monta sua experiência do seu jeito — selecione as pizzas que quiser direto do nosso cardápio, sem pressa e sem limite de gosto.</p>
+    <div class="price" aria-label="Pizzas a partir de R$ 54,90">A partir de <span style="font-size:36px;">R$&nbsp;54,90</span></div>
+    <div style="margin-bottom:14px;">
+      <div style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Bebidas disponíveis</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        <span style="background:rgba(243,156,18,0.08);border:1px solid rgba(243,156,18,0.2);border-radius:20px;padding:5px 14px;font-size:13px;color:#ddd;">🥤 Refri Lata</span>
+        <span style="background:rgba(243,156,18,0.08);border:1px solid rgba(243,156,18,0.2);border-radius:20px;padding:5px 14px;font-size:13px;color:#ddd;">💧 Água</span>
+        <span style="background:rgba(243,156,18,0.08);border:1px solid rgba(243,156,18,0.2);border-radius:20px;padding:5px 14px;font-size:13px;color:#ddd;">💧 Água c/ Gás</span>
+        <span style="background:rgba(243,156,18,0.08);border:1px solid rgba(243,156,18,0.2);border-radius:20px;padding:5px 14px;font-size:13px;color:#ddd;">🫙 H₂O</span>
+        <span style="background:rgba(243,156,18,0.08);border:1px solid rgba(243,156,18,0.2);border-radius:20px;padding:5px 14px;font-size:13px;color:#ddd;">🧃 Sucos</span>
+        <span style="background:rgba(243,156,18,0.08);border:1px solid rgba(243,156,18,0.2);border-radius:20px;padding:5px 14px;font-size:13px;color:#ddd;">🍹 Drinks</span>
+      </div>
+    </div>
+    <p style="color:var(--text-muted);font-size:13px;">Escolha seu sabor favorito e peça quantas pizzas quiser. Bebidas vendidas separadamente conforme disponibilidade.</p>
+  </div>
+</div>
+
+    <div class="birthday reveal">
+      <h2>Aniversariante Premium 🍹</h2>
+      <p>O aniversariante maior de idade pode ganhar um Drink Sex on the Beach gratuitamente. Venha comemorar com os amigos e família em um ambiente incrível.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     CTA CARDÁPIO
+══════════════════════════════════════════ -->
+<section class="menu-cta-section" aria-labelledby="cta-title">
+  <div class="container reveal">
+    <div class="gold-divider"><span>✦</span></div>
+    <h2 id="cta-title">Cardápio <em>Completo</em></h2>
+    <p>Mais de 100 sabores entre pizzas, esfihas, fogazzas, porções e bebidas. Veja tudo no nosso cardápio interativo.</p>
+    <div class="menu-cta-tags">
+      <span class="tag">🍕 Pizzas</span>
+      <span class="tag">🥙 Esfihas</span>
+      <span class="tag">🫓 Fogazzas</span>
+      <span class="tag">🍟 Porções</span>
+      <span class="tag">🍺 Bebidas</span>
+      <span class="tag">🍫 Doces</span>
+    </div>
+    <a href="cardapio.html" class="btn" style="font-size:16px; padding:18px 44px;" aria-label="Ver cardápio completo">
+      <span>Ver Cardápio Completo</span> →
+    </a>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     LOCALIZAÇÃO
+══════════════════════════════════════════ -->
+<section class="location-section" id="localizacao" aria-labelledby="loc-title">
+  <div class="container">
+    <div class="gold-divider reveal"><span>✦</span></div>
+    <p class="section-label reveal" style="text-align:center;">Onde estamos</p>
+    <h2 class="title reveal" id="loc-title">Como Nos <em>Encontrar</em></h2>
+    <p class="title-sub reveal">Estamos no coração de São Bernardo do Campo, prontos para te receber.</p>
+  </div>
+  <div class="location-grid">
+    <div class="location-map reveal">
+      <!-- MAPA COM COORDENADAS REAIS DA RUA PACAEMBÚ, 283 -->
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3654.2!2d-46.549071!3d-23.682511!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce4486c3acd0c5%3A0x5b7b5e5e5e5e5e5e!2sR.%20Pacaemb%C3%BA%2C%20283%20-%20Pauliceia%2C%20S%C3%A3o%20Bernardo%20do%20Campo%20-%20SP%2C%2009692-040!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr"
+        title="Localização da Pizzaria 3 em 1 — Rua Pacaembú, 283, São Bernardo do Campo"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen
+      ></iframe>
+      <div class="location-map-overlay" aria-hidden="true"></div>
+    </div>
+    <div class="location-info reveal reveal-delay-2">
+      <h2>Venha nos <em>Visitar</em></h2>
+      <p class="loc-sub">Ambiente familiar, estacionamento fácil e muito sabor esperando por você.</p>
+      <div class="loc-items">
+        <div class="loc-item">
+          <div class="loc-icon" aria-hidden="true">📍</div>
+          <div class="loc-text">
+            <strong>Endereço</strong>
+            <p>Rua Pacaembú, 283 — Paulicéia<br>São Bernardo do Campo, SP</p>
+          </div>
+        </div>
+        <div class="loc-item">
+          <div class="loc-icon" aria-hidden="true">📞</div>
+          <div class="loc-text">
+            <strong>Telefone</strong>
+            <p><a href="tel:+551141781950">(11) 4178-1950</a> &nbsp;|&nbsp; <a href="tel:+5511997281316">(11) 99728-1316</a></p>
+          </div>
+        </div>
+        <div class="loc-item">
+          <div class="loc-icon" aria-hidden="true">🕐</div>
+          <div class="loc-text">
+            <strong>Horários</strong>
+            <p>Seg a Qui e Dom: 18h às 23h<br>Sex e Sáb: 18h às 23h59</p>
+          </div>
+        </div>
+        <div class="loc-item">
+          <div class="loc-icon" aria-hidden="true">🛵</div>
+          <div class="loc-text">
+            <strong>Delivery</strong>
+            <p>Disponível pelo iFood e WhatsApp</p>
+          </div>
+        </div>
+      </div>
+      <div class="loc-btns">
+        <a href="https://maps.google.com/?q=Rua+Pacaembú+283+São+Bernardo+do+Campo" target="_blank" rel="noopener" class="loc-btn loc-btn-primary" aria-label="Abrir rota no Google Maps">
+          🗺️ Como Chegar
+        </a>
+        <a href="https://wa.me/5511997281316?text=Olá! Gostaria de fazer uma reserva" target="_blank" rel="noopener" class="loc-btn loc-btn-secondary" aria-label="Fazer reserva pelo WhatsApp">
+          📱 Fazer Reserva
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     AVALIAÇÕES GOOGLE
+══════════════════════════════════════════ -->
+<section id="avaliacoes" aria-labelledby="av-title">
+  <div class="container">
+    <div class="reviews-header reveal">
+      <div class="gold-divider"><span>✦</span></div>
+      <p class="section-label">O que falam de nós</p>
+      <h2 class="title" id="av-title">Avaliações <em>Reais</em></h2>
+      <div class="google-rating" role="img" aria-label="Nota 4.8 de 5 no Google, baseado em mais de 500 avaliações">
+        <span class="google-logo" aria-hidden="true">G</span>
+        <div>
+          <div class="g-score" aria-hidden="true">4.8</div>
+          <div class="g-stars" aria-hidden="true">★★★★★</div>
+        </div>
+        <div>
+          <div style="font-weight:700; font-size:15px;">Google Reviews</div>
+          <div class="g-count">Baseado em 500+ avaliações</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card reveal reveal-delay-1">
+        <div class="review-top">
+          <div class="review-avatar" style="background:#4285f4; color:#fff;" aria-hidden="true">M</div>
+          <div>
+            <div class="review-name">Marcos Oliveira</div>
+            <div class="review-date">há 2 semanas</div>
+          </div>
+        </div>
+        <div class="review-stars" aria-label="5 de 5 estrelas">★★★★★</div>
+        <p class="review-text">Melhor rodízio da região, sem dúvida. Atendimento incrível, pizzas muito recheadas e o ambiente é super aconchegante. Já virei cliente fiel!</p>
+        <div class="review-google-badge">
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="#4285f4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34a853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#fbbc05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#ea4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+          <span>Postado no Google</span>
+        </div>
+      </div>
+
+      <div class="review-card reveal reveal-delay-2">
+        <div class="review-top">
+          <div class="review-avatar" style="background:#ea4335; color:#fff;" aria-hidden="true">F</div>
+          <div>
+            <div class="review-name">Fernanda Santos</div>
+            <div class="review-date">há 1 mês</div>
+          </div>
+        </div>
+        <div class="review-stars" aria-label="5 de 5 estrelas">★★★★★</div>
+        <p class="review-text">Ambiente familiar maravilhoso. As esfihas são simplesmente perfeitas — a massa é leve e o recheio é generoso. Levei a família no domingo e todo mundo amou!</p>
+        <div class="review-google-badge">
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="#4285f4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34a853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#fbbc05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#ea4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+          <span>Postado no Google</span>
+        </div>
+      </div>
+
+      <div class="review-card reveal reveal-delay-3">
+        <div class="review-top">
+          <div class="review-avatar" style="background:#34a853; color:#fff;" aria-hidden="true">L</div>
+          <div>
+            <div class="review-name">Lucas Ferreira</div>
+            <div class="review-date">há 3 semanas</div>
+          </div>
+        </div>
+        <div class="review-stars" aria-label="5 de 5 estrelas">★★★★★</div>
+        <p class="review-text">Vale muito a pena. O rodízio premium é sensacional — bebidas inclusas e pizza sem fim. Voltarei com certeza. Recomendo demais para quem está em SBC!</p>
+        <div class="review-google-badge">
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="#4285f4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34a853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#fbbc05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#ea4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+          <span>Postado no Google</span>
+        </div>
+      </div>
+
+      <div class="review-card reveal reveal-delay-1">
+        <div class="review-top">
+          <div class="review-avatar" style="background:#fbbc04; color:#000;" aria-hidden="true">A</div>
+          <div>
+            <div class="review-name">Ana Paula Costa</div>
+            <div class="review-date">há 5 dias</div>
+          </div>
+        </div>
+        <div class="review-stars" aria-label="5 de 5 estrelas">★★★★★</div>
+        <p class="review-text">A fogazza de escarola especial é incrível! Vim várias vezes e nunca decepcionei. O atendimento é sempre muito atencioso. Ambiente limpo e organizado.</p>
+        <div class="review-google-badge">
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="#4285f4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34a853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#fbbc05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#ea4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+          <span>Postado no Google</span>
+        </div>
+      </div>
+
+      <div class="review-card reveal reveal-delay-2">
+        <div class="review-top">
+          <div class="review-avatar" style="background:#c0392b; color:#fff;" aria-hidden="true">R</div>
+          <div>
+            <div class="review-name">Ricardo Mendes</div>
+            <div class="review-date">há 2 meses</div>
+          </div>
+        </div>
+        <div class="review-stars" aria-label="5 de 5 estrelas">★★★★★</div>
+        <p class="review-text">Minha família vai lá há anos. Tradição de verdade no ABC. Pizza carne seca com catupiri é o melhor pedido. Delivery também muito rápido e quentinho!</p>
+        <div class="review-google-badge">
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="#4285f4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34a853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#fbbc05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#ea4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+          <span>Postado no Google</span>
+        </div>
+      </div>
+
+      <div class="review-card reveal reveal-delay-3">
+        <div class="review-top">
+          <div class="review-avatar" style="background:#9b59b6; color:#fff;" aria-hidden="true">J</div>
+          <div>
+            <div class="review-name">Juliana Ramos</div>
+            <div class="review-date">há 1 semana</div>
+          </div>
+        </div>
+        <div class="review-stars" aria-label="5 de 5 estrelas">★★★★★</div>
+        <p class="review-text">Fiz meu aniversário lá e ganhei o drink! Muito especial. A equipe cantou parabéns e o ambiente ficou super animado. Super recomendo para comemorações!</p>
+        <div class="review-google-badge">
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="#4285f4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34a853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#fbbc05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#ea4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+          <span>Postado no Google</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     CARREIRAS
+══════════════════════════════════════════ -->
+<!-- ══════════════════════════════════════════
+     CARREIRAS — cole este bloco inteiro substituindo
+     a section#carreiras atual no seu HTML
+══════════════════════════════════════════ -->
+<section id="carreiras" style="background:var(--dark-2);" aria-labelledby="carr-title">
+  <div class="container">
+    <div class="gold-divider reveal"><span>✦</span></div>
+    <p class="section-label reveal">Faça parte do time</p>
+    <h2 class="title reveal" id="carr-title">Trabalhe <em>Conosco</em></h2>
+    <p class="title-sub reveal">Buscamos pessoas apaixonadas por gastronomia e hospitalidade.</p>
+
+    <!-- Alerta de feedback (sucesso / erro) -->
+    <div id="careerAlert" role="alert" aria-live="polite" style="
+      display:none;
+      max-width:680px;
+      margin:0 auto 24px;
+      padding:16px 20px;
+      border-radius:14px;
+      font-size:15px;
+      font-weight:600;
+    "></div>
+
+    <form class="contact-form reveal" id="careerForm" novalidate>
+
+      <!-- Nome -->
+      <div class="cf-field">
+        <input
+          type="text"
+          name="nome"
+          id="cf-nome"
+          placeholder="Nome completo *"
+          autocomplete="name"
+          aria-required="true"
+          aria-describedby="cf-nome-err"
+        >
+        <span class="cf-error" id="cf-nome-err" role="alert"></span>
+      </div>
+
+      <!-- E-mail -->
+      <div class="cf-field">
+        <input
+          type="email"
+          name="email"
+          id="cf-email"
+          placeholder="E-mail *"
+          autocomplete="email"
+          aria-required="true"
+          aria-describedby="cf-email-err"
+        >
+        <span class="cf-error" id="cf-email-err" role="alert"></span>
+      </div>
+
+      <!-- Telefone -->
+      <div class="cf-field">
+        <input
+          type="tel"
+          name="telefone"
+          id="cf-tel"
+          placeholder="Telefone / WhatsApp *"
+          autocomplete="tel"
+          aria-required="true"
+          aria-describedby="cf-tel-err"
+        >
+        <span class="cf-error" id="cf-tel-err" role="alert"></span>
+      </div>
+
+      <!-- Cargo -->
+      <div class="cf-field">
+        <input
+          type="text"
+          name="cargo"
+          id="cf-cargo"
+          placeholder="Cargo de interesse"
+          aria-describedby="cf-cargo-err"
+        >
+        <span class="cf-error" id="cf-cargo-err" role="alert"></span>
+      </div>
+
+      <!-- Mensagem -->
+      <div class="cf-field">
+        <textarea
+          rows="5"
+          name="mensagem"
+          id="cf-msg"
+          placeholder="Fale um pouco sobre você..."
+          aria-label="Mensagem"
+        ></textarea>
+      </div>
+
+      <!-- Currículo PDF -->
+      <div class="cf-field">
+        <label for="cf-pdf" class="cf-file-label" id="cf-pdf-label">
+          <span id="cf-pdf-text">📎 Anexar currículo em PDF (máx. 5 MB) *</span>
+          <input
+            type="file"
+            id="cf-pdf"
+            name="curriculo"
+            accept=".pdf,application/pdf"
+            aria-required="true"
+            aria-describedby="cf-pdf-err"
+            style="position:absolute;width:1px;height:1px;opacity:0;overflow:hidden;"
+          >
+        </label>
+        <span class="cf-error" id="cf-pdf-err" role="alert"></span>
+      </div>
+
+      <button type="submit" class="btn" id="careerSubmit">
+        <span id="careerBtnText">Enviar Candidatura</span>
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- ══ Estilos específicos do formulário ══ -->
+<style>
+  .cf-field { position: relative; }
+
+  .cf-error {
+    display: block;
+    font-size: 13px;
+    color: #e74c3c;
+    margin-top: 6px;
+    min-height: 18px;
+    padding-left: 4px;
+  }
+
+  .cf-file-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 20px;
+    border-radius: 14px;
+    border: 1.5px dashed var(--border-2);
+    background: var(--dark-3);
+    color: var(--text-muted);
+    font-size: 15px;
+    cursor: pointer;
+    transition: border-color var(--transition), color var(--transition);
+    position: relative;
+  }
+  .cf-file-label:hover,
+  .cf-file-label:focus-within {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+  .cf-file-label.has-file {
+    border-style: solid;
+    border-color: rgba(39,174,96,0.7);
+    color: #2ecc71;
+  }
+  .cf-file-label.has-error {
+    border-color: #e74c3c;
+  }
+
+  /* Campo com erro */
+  .contact-form input.input-error,
+  .contact-form textarea.input-error {
+    border-color: #e74c3c;
+    box-shadow: 0 0 0 3px rgba(231,76,60,0.12);
+  }
+  .contact-form input.input-ok {
+    border-color: rgba(39,174,96,0.6);
+  }
+</style>
+
+<!-- ══ Script do formulário ══ -->
+<!-- Coloque este bloco JUNTO com o restante dos scripts (antes de </body>) -->
+<script>
+(function () {
+  'use strict';
+
+  /* ── Configuração: aponte para o seu backend ── */
+  const BACKEND_URL = 'https://SEU_DOMINIO_BACKEND.com/api/candidatura';
+  /* Exemplo local de teste: 'http://localhost:3001/api/candidatura' */
+
+  const form    = document.getElementById('careerForm');
+  const alert   = document.getElementById('careerAlert');
+  const btnText = document.getElementById('careerBtnText');
+  const btn     = document.getElementById('careerSubmit');
+  const pdfInput = document.getElementById('cf-pdf');
+  const pdfLabel = document.getElementById('cf-pdf-label');
+  const pdfText  = document.getElementById('cf-pdf-text');
+
+  /* ── Helpers ── */
+  function showError(fieldId, errId, msg) {
+    const field = document.getElementById(fieldId);
+    const err   = document.getElementById(errId);
+    if (field)  { field.classList.add('input-error'); field.classList.remove('input-ok'); }
+    if (err)    err.textContent = msg;
+  }
+  function clearError(fieldId, errId) {
+    const field = document.getElementById(fieldId);
+    const err   = document.getElementById(errId);
+    if (field)  { field.classList.remove('input-error'); }
+    if (err)    err.textContent = '';
+  }
+  function markOk(fieldId) {
+    const field = document.getElementById(fieldId);
+    if (field) { field.classList.remove('input-error'); field.classList.add('input-ok'); }
+  }
+
+  function showAlert(msg, type) {
+    alert.style.display = 'block';
+    if (type === 'success') {
+      alert.style.background  = 'rgba(39,174,96,0.12)';
+      alert.style.border      = '1px solid rgba(39,174,96,0.5)';
+      alert.style.color       = '#2ecc71';
+    } else {
+      alert.style.background  = 'rgba(231,76,60,0.1)';
+      alert.style.border      = '1px solid rgba(231,76,60,0.4)';
+      alert.style.color       = '#e74c3c';
+    }
+    alert.textContent = msg;
+    alert.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+  function hideAlert() {
+    alert.style.display = 'none';
+    alert.textContent   = '';
+  }
+
+  /* ── Validação do PDF no input ── */
+  pdfInput.addEventListener('change', function () {
+    const file = this.files[0];
+    document.getElementById('cf-pdf-err').textContent = '';
+    pdfLabel.classList.remove('has-file', 'has-error');
+
+    if (!file) { pdfText.textContent = '📎 Anexar currículo em PDF (máx. 5 MB) *'; return; }
+
+    const isPdf = file.type === 'application/pdf' || file.name.toLowerCase().endsWith('.pdf');
+    const isBig = file.size > 5 * 1024 * 1024;
+
+    if (!isPdf) {
+      pdfLabel.classList.add('has-error');
+      document.getElementById('cf-pdf-err').textContent = '⚠ Somente arquivos PDF são aceitos.';
+      this.value = '';
+      pdfText.textContent = '📎 Anexar currículo em PDF (máx. 5 MB) *';
+      return;
+    }
+    if (isBig) {
+      pdfLabel.classList.add('has-error');
+      document.getElementById('cf-pdf-err').textContent = '⚠ O arquivo excede 5 MB.';
+      this.value = '';
+      pdfText.textContent = '📎 Anexar currículo em PDF (máx. 5 MB) *';
+      return;
+    }
+
+    pdfLabel.classList.add('has-file');
+    pdfText.textContent = '✔ ' + file.name;
+  });
+
+  /* ── Validação em tempo real (blur) ── */
+  document.getElementById('cf-nome').addEventListener('blur', function () {
+    if (!this.value.trim()) showError('cf-nome','cf-nome-err','⚠ Nome é obrigatório.');
+    else { clearError('cf-nome','cf-nome-err'); markOk('cf-nome'); }
+  });
+  document.getElementById('cf-email').addEventListener('blur', function () {
+    const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.value.trim());
+    if (!ok) showError('cf-email','cf-email-err','⚠ Informe um e-mail válido.');
+    else { clearError('cf-email','cf-email-err'); markOk('cf-email'); }
+  });
+  document.getElementById('cf-tel').addEventListener('blur', function () {
+    if (!this.value.trim()) showError('cf-tel','cf-tel-err','⚠ Telefone é obrigatório.');
+    else { clearError('cf-tel','cf-tel-err'); markOk('cf-tel'); }
+  });
+
+  /* ── Envio ── */
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    hideAlert();
+
+    /* Coleta valores */
+    const nome     = document.getElementById('cf-nome').value.trim();
+    const email    = document.getElementById('cf-email').value.trim();
+    const telefone = document.getElementById('cf-tel').value.trim();
+    const file     = pdfInput.files[0];
+
+    /* Validação completa antes de enviar */
+    let valid = true;
+
+    if (!nome) { showError('cf-nome','cf-nome-err','⚠ Nome é obrigatório.'); valid = false; }
+    else clearError('cf-nome','cf-nome-err');
+
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      showError('cf-email','cf-email-err','⚠ Informe um e-mail válido.'); valid = false;
+    } else clearError('cf-email','cf-email-err');
+
+    if (!telefone) { showError('cf-tel','cf-tel-err','⚠ Telefone é obrigatório.'); valid = false; }
+    else clearError('cf-tel','cf-tel-err');
+
+    if (!file) {
+      pdfLabel.classList.add('has-error');
+      document.getElementById('cf-pdf-err').textContent = '⚠ Anexe seu currículo em PDF.';
+      valid = false;
+    } else if (file.type !== 'application/pdf' && !file.name.toLowerCase().endsWith('.pdf')) {
+      pdfLabel.classList.add('has-error');
+      document.getElementById('cf-pdf-err').textContent = '⚠ Somente PDF é aceito.';
+      valid = false;
+    } else if (file.size > 5 * 1024 * 1024) {
+      pdfLabel.classList.add('has-error');
+      document.getElementById('cf-pdf-err').textContent = '⚠ O arquivo excede 5 MB.';
+      valid = false;
+    } else {
+      pdfLabel.classList.remove('has-error');
+      document.getElementById('cf-pdf-err').textContent = '';
+    }
+
+    if (!valid) {
+      showAlert('Por favor, corrija os campos destacados antes de enviar.', 'error');
+      /* Scroll para o primeiro erro */
+      const firstErr = form.querySelector('.input-error, .has-error');
+      if (firstErr) firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
+
+    /* Envia via FormData (multipart — suporta arquivo) */
+    btnText.textContent = '⏳ Enviando...';
+    btn.disabled = true;
+
+    try {
+      const fd = new FormData(form);
+
+      const res  = await fetch(BACKEND_URL, { method: 'POST', body: fd });
+      const data = await res.json();
+
+      if (res.ok && data.ok) {
+        showAlert('✅ Candidatura enviada com sucesso! Entraremos em contato em breve.', 'success');
+        form.reset();
+        pdfLabel.classList.remove('has-file','has-error');
+        pdfText.textContent = '📎 Anexar currículo em PDF (máx. 5 MB) *';
+        /* Remove classes de ok dos campos */
+        form.querySelectorAll('.input-ok').forEach(el => el.classList.remove('input-ok'));
+      } else {
+        const erros = data.erros ? data.erros.join(' · ') : (data.mensagem || 'Erro no envio.');
+        showAlert('❌ ' + erros, 'error');
+      }
+    } catch (_) {
+      showAlert('❌ Não foi possível conectar ao servidor. Verifique sua internet e tente novamente.', 'error');
+    } finally {
+      btnText.textContent = 'Enviar Candidatura';
+      btn.disabled = false;
+    }
+  });
+})();
+</script>
+
+<!-- ══════════════════════════════════════════
+     FOOTER PREMIUM
+══════════════════════════════════════════ -->
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">Pizzaria 3 em 1</div>
+      <p>Referência em rodízio de pizzas, esfihas e fogazzas em São Bernardo do Campo, ABC Paulista. Tradição desde 1993.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navegação</h4>
+      <ul>
+        <li><a href="#home">Início</a></li>
+        <li><a href="#sobre">Nossa História</a></li>
+        <li><a href="#ambiente">Ambiente</a></li>
+        <li><a href="#rodizio">Rodízios</a></li>
+        <li><a href="#localizacao">Localização</a></li>
+        <li><a href="#avaliacoes">Avaliações</a></li>
+        <li><a href="cardapio.html">Cardápio</a></li>
+        <li><a href="#carreiras">Carreiras</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contato</h4>
+      <div class="contact-line">📍 <span>Rua Pacaembú, 283 — Paulicéia, SBC/SP</span></div>
+      <div class="contact-line">📞 <a href="tel:+551141781950">(11) 4178-1950</a></div>
+      <div class="contact-line">📱 <a href="tel:+5511997281316">(11) 99728-1316</a></div>
+      <div class="contact-line">📧 <a href="mailto:contato@3em1pizzaria.com.br">contato@3em1pizzaria.com.br</a></div>
+      <br>
+      <h4>Horários</h4>
+      <div class="contact-line">🕐 <span>Seg–Qui e Dom: 18h–23h</span></div>
+      <div class="contact-line">🕐 <span>Sex–Sáb: 18h–23h59</span></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Pizzaria 3 em 1 — Todos os direitos reservados. São Bernardo do Campo, SP.</p>
+    <div class="footer-social-links">
+      <a href="https://www.instagram.com/3em1pizzaria/" target="_blank" rel="noopener" aria-label="Instagram da Pizzaria 3 em 1">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@3em1pizzaria" target="_blank" rel="noopener" aria-label="TikTok da Pizzaria 3 em 1">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg>
+      </a>
+      <a href="https://wa.me/5511997281316" target="_blank" rel="noopener" aria-label="WhatsApp da Pizzaria 3 em 1">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- ══ FAB MENU ══ -->
+<div class="fab-wrap" role="complementary" aria-label="Ações rápidas">
+  <button class="fab-top" id="fabTop" title="Voltar ao topo" aria-label="Voltar ao topo da página">↑</button>
+  <div class="fab-socials" id="fabSocials">
+    <a class="fab-social-btn fab-tiktok" href="https://www.tiktok.com/@3em1pizzaria" target="_blank" rel="noopener" title="TikTok" aria-label="TikTok da Pizzaria 3 em 1">
+      <svg viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg>
+    </a>
+    <a class="fab-social-btn fab-insta" href="https://www.instagram.com/3em1pizzaria/" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram da Pizzaria 3 em 1">
+      <svg viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+    </a>
+    <a class="fab-social-btn fab-ifood" href="https://www.ifood.com.br/delivery/sao-bernardo-do-campo-sp/pizzaria-3-em-1--pizzas---esfihas-e-fogazzas--pauliceia/15c0d2d4-c24c-49c1-bb92-0055442c9f05?openCart=true" target="_blank" rel="noopener" title="iFood" aria-label="Pedir pelo iFood">
+      <svg viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg" width="28" height="14">
+        <text x="50" y="38" font-family="Arial Black, Helvetica, sans-serif" font-size="38" font-weight="900" fill="white" text-anchor="middle" letter-spacing="-1">ifood</text>
+        <path d="M18 46 Q50 58 82 46" stroke="white" stroke-width="4" stroke-linecap="round" fill="none"/>
+        <circle cx="82" cy="46" r="4" fill="white"/>
+      </svg>
+    </a>
+    <a class="fab-social-btn fab-wpp" href="https://wa.me/5511997281316?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20pedido" target="_blank" rel="noopener" title="WhatsApp" aria-label="Pedir pelo WhatsApp">
+      <svg viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    </a>
+  </div>
+  <button class="fab-main" id="fabMain" title="Contatos e redes sociais" aria-label="Abrir menu de contatos" aria-expanded="false">🍕</button>
+</div>
+
+<!-- ══════════════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════════════ -->
+<script>
+  'use strict';
+
+  /* ── Hero parallax / bg load ── */
+  const heroBg = document.getElementById('heroBg');
+  const heroImg = new Image();
+  heroImg.onload = () => heroBg.classList.add('loaded');
+  heroImg.src = 'https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1600&auto=format&fit=crop';
+
+  /* ── Header shrink on scroll ── */
+  const header = document.getElementById('mainHeader');
+  let lastScroll = 0;
+  window.addEventListener('scroll', () => {
+    const s = window.scrollY;
+    header.classList.toggle('scrolled', s > 60);
+    lastScroll = s;
+  }, { passive: true });
+
+  /* ── Scroll reveal ── */
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => revealObs.observe(el));
+
+  /* ── FAB Menu ── */
+  const fabMain = document.getElementById('fabMain');
+  const fabSocials = document.getElementById('fabSocials');
+  const fabTop = document.getElementById('fabTop');
+
+  fabMain.addEventListener('click', () => {
+    const isOpen = fabSocials.classList.toggle('open');
+    fabMain.classList.toggle('open', isOpen);
+    fabMain.textContent = isOpen ? '+' : '🍕';
+    fabMain.setAttribute('aria-expanded', isOpen);
+  });
+
+  fabSocials.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      fabSocials.classList.remove('open');
+      fabMain.classList.remove('open');
+      fabMain.textContent = '🍕';
+      fabMain.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  window.addEventListener('scroll', () => {
+    fabTop.classList.toggle('visible', window.scrollY > 300);
+  }, { passive: true });
+  fabTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  /* ── Mobile Nav ── */
+  const pizzaBtn = document.getElementById('pizzaMenuBtn');
+  const mobileNav = document.getElementById('mobileNav');
+  const closeBtn = document.getElementById('mobileNavClose');
+
+  const openMobile = () => {
+    mobileNav.classList.add('open');
+    mobileNav.setAttribute('aria-hidden', 'false');
+    pizzaBtn.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  };
+  const closeMobile = () => {
+    mobileNav.classList.remove('open');
+    mobileNav.setAttribute('aria-hidden', 'true');
+    pizzaBtn.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  };
+
+  pizzaBtn.addEventListener('click', openMobile);
+  closeBtn.addEventListener('click', closeMobile);
+  document.querySelectorAll('.mobile-link').forEach(link => link.addEventListener('click', closeMobile));
+
+  /* ── Carousel ── */
+  const track = document.getElementById('carouselTrack');
+  const slides = track.querySelectorAll('.carousel-slide');
+  const dotsContainer = document.getElementById('carouselDots');
+  let current = 0;
+  let autoplayInterval;
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('role', 'tab');
+    dot.setAttribute('aria-label', `Slide ${i + 1}`);
+    dot.addEventListener('click', () => { goTo(i); resetAutoplay(); });
+    dotsContainer.appendChild(dot);
+  });
+
+  function goTo(n) {
+    current = (n + slides.length) % slides.length;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === current));
+  }
+
+  document.getElementById('carouselPrev').addEventListener('click', () => { goTo(current - 1); resetAutoplay(); });
+  document.getElementById('carouselNext').addEventListener('click', () => { goTo(current + 1); resetAutoplay(); });
+
+  function startAutoplay() { autoplayInterval = setInterval(() => goTo(current + 1), 5000); }
+  function resetAutoplay() { clearInterval(autoplayInterval); startAutoplay(); }
+  startAutoplay();
+
+  /* ── Keyboard nav for carousel ── */
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') { goTo(current - 1); resetAutoplay(); }
+    if (e.key === 'ArrowRight') { goTo(current + 1); resetAutoplay(); }
+  });
+
+  /* ── Career form ── */
+  document.getElementById('careerForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type="submit"]');
+    btn.textContent = '✓ Enviado!';
+    btn.style.background = '#27ae60';
+    setTimeout(() => {
+      btn.querySelector('span') ? btn.querySelector('span').textContent = 'Enviar Currículo' : (btn.textContent = 'Enviar Currículo');
+      btn.style.background = '';
+      e.target.reset();
+    }, 3000);
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+Dia 15/05 trabalho
+
+- Inicio do projeto do site e esbocoço do cardapio
+- mexendo no layout e adicionando funcionalidade
+- usando chat gpt, deepseek, cloud ia
+
+Inicio - 13:03
+finalizado - 15:55
+
+-----------------------------------------------------
+
+
+Dia 16/05
+
+- Melhorando layout e funções
+- fazendo imagens chatgpt, prompt no deepseek, codificando cloud ia
+
+Inicio - 10:43
+Finalizado - 18:30
+
+ -23.651759, -46.57713
+
+----------------------------------------------------
+
+Dia 17/05
+
+- Avaliando projeto, completando site e adicionando o CNPJ
+- Aprender o que falta para vender um site e complementar tudo que for necessario
+- Iniciar (talvez) projeto do APP do restaurante
+
+inicio - 13:26
+finalizado - 14:22
+Reiniciado - 21:55
+Finalizado - 

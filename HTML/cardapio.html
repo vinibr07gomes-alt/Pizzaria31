@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cardápio | Pizzaria 3 em 1</title>
+  <meta name="description" content="Cardápio completo da Pizzaria 3 em 1 — Pizzas, Esfihas, Fogazzas, Porções e Bebidas.">
+  <meta property="og:title" content="Pizzaria 3 em 1 - Coma. Beba. Relaxe.">
+  <meta property="og:description" content="O melhor rodízio de pizzas, esfihas e fogazzas em São Bernardo do Campo. Ambiente familiar há mais de 30 anos.">
+  <meta property="og:image" content="https://seusite.com/imagens/pizza-destaque.jpg">
+  <meta property="og:url" content="https://seusite.com">
+  <meta property="og:type" content="website">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --gold: #f39c12;
+      --red: #c0392b;
+      --dark: #050505;
+      --card-bg: #111;
+      --border: #222;
+      --text-muted: #999;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+      background: var(--dark);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* ── HEADER ── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(5,5,5,0.97);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(8px);
+    }
+
+    .header-inner {
+      max-width: 1300px;
+      margin: auto;
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 14px;
+      transition: opacity 0.2s;
+    }
+
+    .back-btn:hover { opacity: 0.8; }
+
+    .header-logo {
+      font-family: 'Playfair Display', serif;
+      color: var(--gold);
+      font-size: 20px;
+    }
+
+    .header-search {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #111;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 8px 16px;
+      flex: 1;
+      max-width: 320px;
+      transition: border-color 0.2s;
+    }
+
+    .header-search:focus-within { border-color: var(--gold); }
+
+    .header-search input {
+      background: none;
+      border: none;
+      color: #fff;
+      font-family: 'Raleway', sans-serif;
+      font-size: 14px;
+      width: 100%;
+      outline: none;
+    }
+
+    .header-search input::placeholder { color: var(--text-muted); }
+
+    /* ── HERO CARDÁPIO ── */
+    .cardapio-hero {
+      background: linear-gradient(135deg, #0f0f0f 0%, #1a0a0a 50%, #0f0f0f 100%);
+      text-align: center;
+      padding: 60px 20px 50px;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cardapio-hero::before {
+      content: '🍕';
+      position: absolute;
+      font-size: 200px;
+      opacity: 0.04;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .cardapio-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 52px;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .cardapio-hero p { color: var(--text-muted); font-size: 16px; }
+
+    /* ── FILTER TABS ── */
+    .filter-wrap {
+      position: sticky;
+      top: 65px;
+      z-index: 90;
+      background: rgba(5,5,5,0.97);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(8px);
+    }
+
+    .filter-tabs {
+      max-width: 1300px;
+      margin: auto;
+      padding: 0 20px;
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .filter-tabs::-webkit-scrollbar { display: none; }
+
+    .tab-btn {
+      flex-shrink: 0;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-family: 'Raleway', sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      padding: 16px 18px;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+
+    .tab-btn:hover { color: #fff; }
+    .tab-btn.active { color: var(--gold); border-bottom-color: var(--gold); }
+
+    /* ── SUBCATEGORY PILLS ── */
+    .subcats {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 18px 20px 0;
+      display: none;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .subcats.visible { display: flex; }
+
+    .subcat-pill {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      color: #ccc;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: 0.2s;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 600;
+    }
+
+    .subcat-pill:hover,
+    .subcat-pill.active { background: var(--gold); color: #000; border-color: var(--gold); }
+
+    /* ── MAIN CONTENT ── */
+    .content {
+      max-width: 1300px;
+      margin: auto;
+      padding: 40px 20px 80px;
+    }
+
+    /* ── SECTION TITLE ── */
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      color: var(--gold);
+      margin-bottom: 10px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .section-count {
+      color: var(--text-muted);
+      font-size: 13px;
+      margin-bottom: 30px;
+    }
+
+    /* ── MENU CATEGORY BLOCK ── */
+    .menu-block {
+      margin-bottom: 70px;
+    }
+
+    .subcat-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--red);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin: 30px 0 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .subcat-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── ITEMS GRID ── */
+    .items-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 16px;
+    }
+
+    .item-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      transition: border-color 0.2s, transform 0.2s;
+      cursor: default;
+    }
+
+    .item-card:hover { border-color: var(--gold); box-shadow: 0 0 0 1px var(--gold); }
+
+    .item-card.hidden { display: none; }
+
+    .item-info { flex: 1; }
+
+    .item-name {
+      font-weight: 700;
+      font-size: 15px;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .item-desc {
+      color: var(--text-muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .item-price {
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 18px;
+      font-family: 'Playfair Display', serif;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .item-badge {
+      display: inline-block;
+      font-size: 10px;
+      padding: 2px 8px;
+      border-radius: 10px;
+      margin-top: 6px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .badge-especial { background: rgba(192,57,43,0.2); color: var(--red); border: 1px solid rgba(192,57,43,0.3); }
+    .badge-doce { background: rgba(243,156,18,0.15); color: var(--gold); border: 1px solid rgba(243,156,18,0.3); }
+
+    /* ── EMPTY STATE ── */
+    .empty-state {
+      text-align: center;
+      padding: 80px 20px;
+      display: none;
+    }
+
+    .empty-state.visible { display: block; }
+    .empty-state p { color: var(--text-muted); font-size: 18px; margin-top: 16px; }
+
+    /* ── CTA BOTTOM ── */
+    .cta-bottom {
+      text-align: center;
+      background: linear-gradient(135deg, #111 0%, #1a1a1a 100%);
+      border-radius: 24px;
+      padding: 60px 30px;
+      margin-top: 40px;
+      border: 1px solid var(--border);
+    }
+
+    .cta-bottom h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+
+    .cta-bottom p { color: #ccc; margin-bottom: 28px; font-size: 16px; }
+
+    .btn {
+      background: var(--red);
+      color: white;
+      padding: 14px 32px;
+      border-radius: 40px;
+      font-weight: 700;
+      font-family: 'Raleway', sans-serif;
+      transition: 0.3s;
+      display: inline-block;
+      font-size: 15px;
+    }
+
+    .btn:hover { background: var(--gold); color: #000; transform: scale(1.04); }
+
+    .btn-ghost {
+      background: transparent;
+      border: 2px solid var(--gold);
+      color: var(--gold);
+      padding: 12px 30px;
+      border-radius: 40px;
+      font-weight: 700;
+      font-family: 'Raleway', sans-serif;
+      transition: 0.3s;
+      display: inline-block;
+      font-size: 15px;
+      margin-left: 12px;
+    }
+
+    .btn-ghost:hover { background: var(--gold); color: #000; transform: scale(1.04); }
+
+    /* ── FAB MENU ── */
+    .fab-wrap {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      z-index: 1000;
+    }
+    .fab-top {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: #f39c12;
+      color: #000;
+      border: none;
+      font-size: 20px;
+      font-weight: 900;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(243,156,18,0.45);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s, transform 0.2s;
+    }
+    .fab-top.visible { opacity: 1; visibility: visible; }
+    .fab-top:hover { transform: scale(1.1); }
+    .fab-socials {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1), opacity 0.3s ease;
+    }
+    .fab-socials.open { max-height: 270px; opacity: 1; }
+    .fab-social-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 3px 14px rgba(0,0,0,0.5);
+      transition: transform 0.2s;
+      flex-shrink: 0;
+    }
+    .fab-social-btn:hover { transform: scale(1.12); }
+    .fab-social-btn svg { width: 20px; height: 20px; }
+    .fab-wpp  { background: #25D366; }
+    .fab-ifood { background: #ea1d2c; }
+    .fab-insta { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+    .fab-tiktok { background: #010101; border: 1px solid #444; }
+    .fab-main {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: #c0392b;
+      color: #fff;
+      border: none;
+      font-size: 22px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(192,57,43,0.6);
+      transition: transform 0.3s, background 0.2s;
+    }
+    .fab-main:hover { background: #f39c12; color: #000; }
+    .fab-main.open { transform: rotate(45deg); background: #f39c12; color: #000; }
+
+    .fab-social-btn,
+.fab-social-btn svg,
+.fab-social-btn * {
+  cursor: pointer;
+}
+
+.fab-ifood {
+  cursor: pointer;
+}
+
+
+
+    @media (max-width: 768px) {
+      .cardapio-hero h1 { font-size: 36px; }
+      .header-search { max-width: 200px; }
+      .items-grid { grid-template-columns: 1fr; }
+      .drinks-grid { grid-template-columns: 1fr 1fr; }
+      .section-title { font-size: 28px; }
+    }
+
+    @media (max-width: 480px) {
+      .drinks-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── DRINK CARDS ── */
+    .drinks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .drink-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .drink-card:hover { border-color: var(--gold); box-shadow: 0 0 0 1px var(--gold); }
+    .drink-card.hidden { display: none; }
+
+    .drink-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .drink-info { padding: 16px 18px; }
+
+    .drink-name {
+      font-weight: 700;
+      font-size: 15px;
+      color: #fff;
+      margin-bottom: 5px;
+    }
+
+    .drink-desc {
+      color: var(--text-muted);
+      font-size: 12px;
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+
+    .drink-price {
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 20px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .drink-hero {
+      background: linear-gradient(135deg, #0d0005 0%, #1a0010 50%, #0d0005 100%);
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 30px;
+      text-align: center;
+      border: 1px solid #2a0015;
+    }
+
+    .drink-hero p {
+      color: #ccc;
+      font-size: 15px;
+      font-style: italic;
+    }
+
+    .logo-svg-small { width: 44px; height: 44px; flex-shrink: 0; }
+
+  </style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="back-btn">← Site</a>
+    <div style="font-family:'Playfair Display',serif;color:var(--gold);font-size:16px;font-weight:700;">Pizzaria 3 em 1</div>
+    <div class="header-search">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" id="searchInput" placeholder="Buscar sabor...">
+    </div>
+  </div>
+</header>
+
+<!-- ── HERO BRANDED ── -->
+<div class="cardapio-hero">
+  <!-- Logo grande centralizada -->
+  <svg viewBox="0 0 110 110" xmlns="http://www.w3.org/2000/svg" style="width:130px;height:130px;display:block;margin:0 auto 20px;">
+    <circle cx="55" cy="55" r="52" fill="#000"/>
+    <circle cx="55" cy="55" r="52" fill="none" stroke="#f39c12" stroke-width="5"/>
+    <circle cx="55" cy="55" r="44" fill="none" stroke="#f39c12" stroke-width="1.8"/>
+    <path d="M55 22 L78 68 Q55 78 32 68 Z" fill="#f5c518"/>
+    <path d="M32 68 Q55 80 78 68" fill="none" stroke="#e8a020" stroke-width="7" stroke-linecap="round"/>
+    <line x1="55" y1="22" x2="78" y2="68" stroke="#c8860a" stroke-width="1" opacity="0.5"/>
+    <line x1="55" y1="22" x2="32" y2="68" stroke="#c8860a" stroke-width="1" opacity="0.5"/>
+    <circle cx="55" cy="50" r="4" fill="#c0392b"/>
+    <circle cx="46" cy="60" r="3" fill="#c0392b"/>
+    <circle cx="64" cy="60" r="3" fill="#c0392b"/>
+    <text x="38" y="58" text-anchor="middle" font-family="Arial Black,sans-serif" font-size="12" font-weight="900" fill="#fff">3</text>
+    <text x="72" y="58" text-anchor="middle" font-family="Arial Black,sans-serif" font-size="12" font-weight="900" fill="#fff">1</text>
+    <path id="heroArcTop" d="M18,55 A37,37 0 0,1 92,55" fill="none"/>
+    <text font-family="Arial Black,sans-serif" font-size="9" font-weight="900" fill="#fff" letter-spacing="3">
+      <textPath href="#heroArcTop" startOffset="8%">PIZZARIA</textPath>
+    </text>
+    <path id="heroArcBot" d="M20,60 A37,37 0 0,0 90,60" fill="none"/>
+    <text font-family="Arial,sans-serif" font-size="7.5" font-weight="700" fill="#f39c12" letter-spacing="1.5">
+      <textPath href="#heroArcBot" startOffset="14%">Desde 1993</textPath>
+    </text>
+  </svg>
+
+  <h1>Cardápio Completo</h1>
+  <p>Pizzas · Esfihas · Fogazzas · Drinks · Porções</p>
+
+  <!-- Botões de pedido direto -->
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px;">
+    <a href="https://wa.me/5511997281316?text=Olá! Gostaria de fazer um pedido"
+       target="_blank"
+       style="display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:12px 22px;border-radius:40px;font-weight:700;font-family:'Raleway',sans-serif;font-size:14px;text-decoration:none;">
+      <svg viewBox="0 0 24 24" fill="white" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      WhatsApp
+    </a>
+    <a href="https://www.ifood.com.br/delivery/sao-bernardo-do-campo-sp/pizzaria-3-em-1--pizzas---esfihas-e-fogazzas--pauliceia/15c0d2d4-c24c-49c1-bb92-0055442c9f05?openCart=true"
+       target="_blank"
+       style="display:inline-flex;align-items:center;gap:8px;background:#ea1d2c;color:#fff;padding:12px 22px;border-radius:40px;font-weight:700;font-family:'Raleway',sans-serif;font-size:14px;text-decoration:none;">
+      🛵 iFood
+    </a>
+    <a href="https://www.instagram.com/3em1pizzaria/"
+       target="_blank"
+       style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff;padding:12px 22px;border-radius:40px;font-weight:700;font-family:'Raleway',sans-serif;font-size:14px;text-decoration:none;">
+      <svg viewBox="0 0 24 24" fill="white" width="18" height="18"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      Instagram
+    </a>
+  </div>
+
+  <!-- Horários rápidos -->
+  <div style="margin-top:20px;font-size:13px;color:#888;line-height:2;">
+    <span>🕕 Seg–Qui e Dom: 18h às 23h</span> &nbsp;·&nbsp;
+    <span>Sex e Sáb: 18h às 23h59</span>
+  </div>
+</div>
+
+<!-- ── FILTER TABS ── -->
+<div class="filter-wrap">
+  <div class="filter-tabs" id="filterTabs">
+    <button class="tab-btn active" data-tab="all">🍽️ Tudo</button>
+    <button class="tab-btn" data-tab="pizzas">🍕 Pizzas</button>
+    <button class="tab-btn" data-tab="esfihas">🥙 Esfihas</button>
+    <button class="tab-btn" data-tab="fogazzas">🫓 Fogazzas</button>
+    <button class="tab-btn" data-tab="porcoes">🍟 Porções</button>
+    <button class="tab-btn" data-tab="bebidas">🥤 Bebidas</button>
+    <button class="tab-btn" data-tab="drinks">🍹 Drinks</button>
+    <button class="tab-btn" data-tab="doces">🍫 Doces</button>
+  </div>
+</div>
+
+<!-- ── SUBCATEGORY PILLS (pizzas) ── -->
+<div class="content" style="padding-bottom:0; padding-top:20px;">
+  <div class="subcats" id="pizzaSubcats">
+    <button class="subcat-pill active" data-subcat="all-pizza">Todas</button>
+    <button class="subcat-pill" data-subcat="queijos">Queijos</button>
+    <button class="subcat-pill" data-subcat="aves">Aves</button>
+    <button class="subcat-pill" data-subcat="peixes">Peixes</button>
+    <button class="subcat-pill" data-subcat="vegetais">Vegetais</button>
+    <button class="subcat-pill" data-subcat="defumados">Defumados</button>
+    <button class="subcat-pill" data-subcat="especiais">Especiais</button>
+    <button class="subcat-pill" data-subcat="doces-pizza">Doces</button>
+  </div>
+</div>
+
+<!-- ── CONTENT ── -->
+<div class="content" id="mainContent">
+
+  <!-- ════ PIZZAS ════ -->
+  <div class="menu-block" data-section="pizzas">
+    <h2 class="section-title">Pizzas</h2>
+
+    <!-- Queijos -->
+    <div data-subcat="queijos">
+      <div class="subcat-title">Queijos</div>
+      <div class="items-grid">
+        <div class="item-card" data-cat="pizzas" data-sub="queijos"><div class="item-info"><div class="item-name">2 Queijos</div><div class="item-desc">Mussarela e Catupiri</div></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="queijos"><div class="item-info"><div class="item-name">3 Queijos</div><div class="item-desc">Mussarela, Catupiri e Parmesão</div></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="queijos"><div class="item-info"><div class="item-name">4 Queijos</div><div class="item-desc">Mussarela, Catupiri, Parmesão e Provolone</div></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="queijos"><div class="item-info"><div class="item-name">5 Queijos</div><div class="item-desc">Mussarela, Catupiri, Parmesão, Provolone e Cheddar</div></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="queijos"><div class="item-info"><div class="item-name">Mussarela</div><div class="item-desc">Mussarela</div></div><div class="item-price">R$ 54,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="queijos"><div class="item-info"><div class="item-name">Marguerita</div><div class="item-desc">Mussarela, molho de tomate e manjericão fresco</div></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="queijos"><div class="item-info"><div class="item-name">Napolitana</div><div class="item-desc">Mussarela, parmesão e rodelas de tomate</div></div><div class="item-price">R$ 59,90</div></div>
+      </div>
+    </div>
+
+    <!-- Aves -->
+    <div data-subcat="aves">
+      <div class="subcat-title">Aves</div>
+      <div class="items-grid">
+        <div class="item-card" data-cat="pizzas" data-sub="aves"><div class="item-info"><div class="item-name">Caipira</div><div class="item-desc">Frango, milho e catupiri</div></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="aves"><div class="item-info"><div class="item-name">Frango com Catupiri</div><div class="item-desc">Frango e catupiri</div></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="aves"><div class="item-info"><div class="item-name">Frango à Moda</div><div class="item-desc">Frango, milho, ervilha, ovo, bacon, cebola e mussarela</div></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="aves"><div class="item-info"><div class="item-name">Oficina 2</div><div class="item-desc">Frango, milho, ervilha, presunto, calabresa, cebola, catupiri e parmesão</div></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="aves"><div class="item-info"><div class="item-name">Peito de Peru</div><div class="item-desc">Peito de peru com catupiri ou mussarela</div></div><div class="item-price">R$ 59,90</div></div>
+      </div>
+    </div>
+
+    <!-- Peixes -->
+    <div data-subcat="peixes">
+      <div class="subcat-title">Peixes</div>
+      <div class="items-grid">
+        <div class="item-card" data-cat="pizzas" data-sub="peixes"><div class="item-info"><div class="item-name">Aliche</div><div class="item-desc">Mussarela e aliche</div></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="peixes"><div class="item-info"><div class="item-name">Atum</div><div class="item-desc">Atum e cebola</div></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="peixes"><div class="item-info"><div class="item-name">Atum à Moda</div><div class="item-desc">Atum, bacon, cebola e mussarela</div></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="peixes"><div class="item-info"><div class="item-name">Atum com Catupiri</div><div class="item-desc">Atum e catupiri</div></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="peixes"><div class="item-info"><div class="item-name">Atum Gratinado</div><div class="item-desc">Atum, cebola e parmesão</div></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="peixes"><div class="item-info"><div class="item-name">Jardineira</div><div class="item-desc">Atum, milho e mussarela</div></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="peixes"><div class="item-info"><div class="item-name">Oficina 1</div><div class="item-desc">Atum, milho, ervilha, presunto, calabresa, cebola, catupiri e parmesão</div></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="peixes"><div class="item-info"><div class="item-name">Peruna</div><div class="item-desc">Atum, ervilha, cebola e mussarela</div></div><div class="item-price">R$ 59,90</div></div>
+      </div>
+    </div>
+
+    <!-- Vegetais -->
+    <div data-subcat="vegetais">
+      <div class="subcat-title">Vegetais</div>
+      <div class="items-grid">
+        <div class="item-card" data-cat="pizzas" data-sub="vegetais"><div class="item-info"><div class="item-name">Berinjela</div><div class="item-desc">Berinjela refogada com catupiri ou mussarela</div></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="vegetais"><div class="item-info"><div class="item-name">Brócolis</div><div class="item-desc">Brócolis, bacon, mussarela e alho frito</div></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="vegetais"><div class="item-info"><div class="item-name">Escarola</div><div class="item-desc">Escarola, bacon, cebola e mussarela</div></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="vegetais"><div class="item-info"><div class="item-name">Jardim</div><div class="item-desc">Palmito, ervilha e catupiri</div></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="vegetais"><div class="item-info"><div class="item-name">Italiana</div><div class="item-desc">Mussarela, champignon, manjericão e cebola</div></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="vegetais"><div class="item-info"><div class="item-name">Palmito</div><div class="item-desc">Palmito com mussarela</div></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="vegetais"><div class="item-info"><div class="item-name">Primavera</div><div class="item-desc">Palmito, cebola, catupiri e mussarela</div></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="vegetais"><div class="item-info"><div class="item-name">Vegetariana</div><div class="item-desc">Escarola, milho, ervilha, palmito, champignon e cebola</div></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="vegetais"><div class="item-info"><div class="item-name">Milho Verde</div><div class="item-desc">Milho e mussarela</div></div><div class="item-price">R$ 54,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="vegetais"><div class="item-info"><div class="item-name">Milho com Catupiri</div><div class="item-desc">Milho e catupiri</div></div><div class="item-price">R$ 59,90</div></div>
+      </div>
+    </div>
+
+    <!-- Defumados -->
+    <div data-subcat="defumados">
+      <div class="subcat-title">Defumados</div>
+      <div class="items-grid">
+        <div class="item-card" data-cat="pizzas" data-sub="defumados"><div class="item-info"><div class="item-name">À Moda da Casa</div><div class="item-desc">Presunto, ovo, ervilha, palmito e mussarela</div></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="defumados"><div class="item-info"><div class="item-name">À Moda do Chefe</div><div class="item-desc">Presunto, ervilha, escarola, bacon e parmesão</div></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="defumados"><div class="item-info"><div class="item-name">À Moda do Pizzaiolo</div><div class="item-desc">Presunto, ovo, ervilha, cebola, catupiri e mussarela</div></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="defumados"><div class="item-info"><div class="item-name">Bacon</div><div class="item-desc">Bacon e mussarela</div></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="defumados"><div class="item-info"><div class="item-name">Bacon com Catupiri</div><div class="item-desc">Bacon e catupiri</div></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="defumados"><div class="item-info"><div class="item-name">Baiana 1</div><div class="item-desc">Calabresa moída, cebola, alho e pimenta</div></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="defumados"><div class="item-info"><div class="item-name">Baiana 2</div><div class="item-desc">Calabresa moída, pimenta e parmesão</div></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="defumados"><div class="item-info"><div class="item-name">Calabresa</div><div class="item-desc">Calabresa e cebola</div></div><div class="item-price">R$ 54,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="defumados"><div class="item-info"><div class="item-name">Calabresa Gratinada</div><div class="item-desc">Calabresa, cebola e parmesão</div></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="defumados"><div class="item-info"><div class="item-name">Calacatu</div><div class="item-desc">Calabresa e catupiri</div></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="defumados"><div class="item-info"><div class="item-name">Francesa</div><div class="item-desc">Presunto, champignon e mussarela</div></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="defumados"><div class="item-info"><div class="item-name">Lombo 2</div><div class="item-desc">Lombo, palmito, mussarela e rodelas de tomate</div></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="defumados"><div class="item-info"><div class="item-name">Lombo com Catupiri</div><div class="item-desc">Lombo e catupiri</div></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="defumados"><div class="item-info"><div class="item-name">Lombo à Moda</div><div class="item-desc">Lombo, bacon, cebola e mussarela</div></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="defumados"><div class="item-info"><div class="item-name">Namorado</div><div class="item-desc">Presunto, palmito e mussarela</div></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="defumados"><div class="item-info"><div class="item-name">Parmegiana</div><div class="item-desc">Lombo, bacon, mussarela e parmesão</div></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="defumados"><div class="item-info"><div class="item-name">Paulista</div><div class="item-desc">Mussarela, calabresa, cebola e catupiri</div></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="defumados"><div class="item-info"><div class="item-name">Pepperone Normal</div><div class="item-desc">Presunto, ovo, ervilha, salame, pimentão e mussarela</div></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="defumados"><div class="item-info"><div class="item-name">Portuguesa</div><div class="item-desc">Presunto, ovo, calabresa, cebola e mussarela</div></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="defumados"><div class="item-info"><div class="item-name">Siciliana</div><div class="item-desc">Mussarela, champignon, bacon, cebola, parmesão e rodelas de tomate</div></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="defumados"><div class="item-info"><div class="item-name">Toscana</div><div class="item-desc">Calabresa e mussarela</div></div><div class="item-price">R$ 59,90</div></div>
+      </div>
+    </div>
+
+    <!-- Especiais -->
+    <div data-subcat="especiais">
+      <div class="subcat-title">Especiais</div>
+      <div class="items-grid">
+        <div class="item-card" data-cat="pizzas" data-sub="especiais"><div class="item-info"><div class="item-name">Atum Sólido</div><div class="item-desc">Atum sólido e cebola</div><span class="item-badge badge-especial">Especial</span></div><div class="item-price">R$ 64,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="especiais"><div class="item-info"><div class="item-name">Carne Seca</div><div class="item-desc">Carne seca, mussarela ou catupiri</div><span class="item-badge badge-especial">Especial</span></div><div class="item-price">R$ 64,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="especiais"><div class="item-info"><div class="item-name">Calzone 2 x 1</div><div class="item-desc">Presunto, ovo, ervilha, palmito, mussarela, catupiri e parmesão</div><span class="item-badge badge-especial">Especial</span></div><div class="item-price">R$ 64,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="especiais"><div class="item-info"><div class="item-name">Pepperone Especial</div><div class="item-desc">Mussarela e salame pepperone</div><span class="item-badge badge-especial">Especial</span></div><div class="item-price">R$ 64,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="especiais"><div class="item-info"><div class="item-name">Rúcula com Tomate Seco</div><div class="item-desc">Mussarela, rúcula e tomate seco</div><span class="item-badge badge-especial">Especial</span></div><div class="item-price">R$ 64,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="especiais"><div class="item-info"><div class="item-name">Salame com Catupiri</div><div class="item-desc">Salame e catupiri</div><span class="item-badge badge-especial">Especial</span></div><div class="item-price">R$ 64,90</div></div>
+      </div>
+    </div>
+
+    <!-- Doces pizza -->
+    <div data-subcat="doces-pizza">
+      <div class="subcat-title">Doces</div>
+      <div class="items-grid">
+        <div class="item-card" data-cat="pizzas" data-sub="doces-pizza" data-doce="true"><div class="item-info"><div class="item-name">Banana</div><div class="item-desc">Banana, leite condensado, açúcar e canela</div><span class="item-badge badge-doce">Doce</span></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="doces-pizza" data-doce="true"><div class="item-info"><div class="item-name">Brigadeiro</div><div class="item-desc">Chocolate e chocolate granulado</div><span class="item-badge badge-doce">Doce</span></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="doces-pizza" data-doce="true"><div class="item-info"><div class="item-name">Chocolate com Morango</div><div class="item-desc">Chocolate com morango ou banana</div><span class="item-badge badge-doce">Doce</span></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="doces-pizza" data-doce="true"><div class="item-info"><div class="item-name">MMS</div><div class="item-desc">Chocolate e MMS</div><span class="item-badge badge-doce">Doce</span></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="doces-pizza" data-doce="true"><div class="item-info"><div class="item-name">Prestígio</div><div class="item-desc">Chocolate e coco ralado</div><span class="item-badge badge-doce">Doce</span></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="doces-pizza" data-doce="true"><div class="item-info"><div class="item-name">Romeu e Julieta</div><div class="item-desc">Mussarela e goiabada</div><span class="item-badge badge-doce">Doce</span></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="doces-pizza" data-doce="true"><div class="item-info"><div class="item-name">Nevada de Abacaxi</div><div class="item-desc">Abacaxi e chocolate branco ao forno</div><span class="item-badge badge-doce">Doce</span></div><div class="item-price">R$ 59,90</div></div>
+        <div class="item-card" data-cat="pizzas" data-sub="doces-pizza" data-doce="true"><div class="item-info"><div class="item-name">Nevada de Banana</div><div class="item-desc">Banana e chocolate branco ao forno</div><span class="item-badge badge-doce">Doce</span></div><div class="item-price">R$ 59,90</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════ ESFIHAS ════ -->
+  <div class="menu-block" data-section="esfihas">
+    <h2 class="section-title">Esfihas</h2>
+    <div class="subcat-title">Salgadas</div>
+    <div class="items-grid">
+      <div class="item-card" data-cat="esfihas"><div class="item-info"><div class="item-name">2 Queijos</div><div class="item-desc">Mussarela e catupiri</div></div><div class="item-price">R$ 7,70</div></div>
+      <div class="item-card" data-cat="esfihas"><div class="item-info"><div class="item-name">4 Queijos</div><div class="item-desc">Mussarela, catupiri, parmesão e provolone</div></div><div class="item-price">R$ 7,70</div></div>
+      <div class="item-card" data-cat="esfihas"><div class="item-info"><div class="item-name">Alho</div><div class="item-desc">Mussarela e alho</div></div><div class="item-price">R$ 7,70</div></div>
+      <div class="item-card" data-cat="esfihas"><div class="item-info"><div class="item-name">Atum</div><div class="item-desc">Atum com catupiri ou mussarela</div></div><div class="item-price">R$ 7,70</div></div>
+      <div class="item-card" data-cat="esfihas"><div class="item-info"><div class="item-name">Bacon</div><div class="item-desc">Bacon com catupiri ou mussarela</div></div><div class="item-price">R$ 7,70</div></div>
+      <div class="item-card" data-cat="esfihas"><div class="item-info"><div class="item-name">Bauru</div><div class="item-desc">Presunto, mussarela e rodela de tomate</div></div><div class="item-price">R$ 7,70</div></div>
+      <div class="item-card" data-cat="esfihas"><div class="item-info"><div class="item-name">Berinjela</div><div class="item-desc">Berinjela com catupiri ou mussarela</div></div><div class="item-price">R$ 7,70</div></div>
+      <div class="item-card" data-cat="esfihas"><div class="item-info"><div class="item-name">Brócolis</div><div class="item-desc">Brócolis com catupiri ou mussarela</div></div><div class="item-price">R$ 7,70</div></div>
+      <div class="item-card" data-cat="esfihas"><div class="item-info"><div class="item-name">Caipira</div><div class="item-desc">Frango, milho e catupiri</div></div><div class="item-price">R$ 7,70</div></div>
+      <div class="item-card" data-cat="esfihas"><div class="item-info"><div class="item-name">Calabresa</div><div class="item-desc">Calabresa moída</div></div><div class="item-price">R$ 7,00</div></div>
+      <div class="item-card" data-cat="esfihas"><div class="item-info"><div class="item-name">Calabresa com Catupiri</div><div class="item-desc">Calabresa moída e catupiri ou mussarela</div></div><div class="item-price">R$ 7,70</div></div>
+      <div class="item-card" data-cat="esfihas"><div class="item-info"><div class="item-name">Carne</div><div class="item-desc">Carne temperada</div></div><div class="item-price">R$ 7,00</div></div>
+      <div class="item-card" data-cat="esfihas"><div class="item-info"><div class="item-name">Carne com Catupiri</div><div class="item-desc">Carne refogada e catupiri ou mussarela</div></div><div class="item-price">R$ 7,70</div></div>
+      <div class="item-card" data-cat="esfihas"><div class="item-info"><div class="item-name">Carne com Cheddar</div><div class="item-desc">Carne refogada e cheddar</div></div><div class="item-price">R$ 7,70</div></div>
+      <div class="item-card" data-cat="esfihas"><div class="item-info"><div class="item-name">Escarola</div><div class="item-desc">Escarola refogada e catupiri ou mussarela</div></div><div class="item-price">R$ 7,70</div></div>
+      <div class="item-card" data-cat="esfihas"><div class="item-info"><div class="item-name">Escarola com Aliche</div><div class="item-desc">Escarola refogada e aliche</div></div><div class="item-price">R$ 7,70</div></div>
+      <div class="item-card" data-cat="esfihas"><div class="item-info"><div class="item-name">Frango</div><div class="item-desc">Frango com catupiri ou mussarela</div></div><div class="item-price">R$ 7,70</div></div>
+      <div class="item-card" data-cat="esfihas"><div class="item-info"><div class="item-name">Lombo</div><div class="item-desc">Lombo defumado e catupiri ou mussarela</div></div><div class="item-price">R$ 7,70</div></div>
+      <div class="item-card" data-cat="esfihas"><div class="item-info"><div class="item-name">Marguerita</div><div class="item-desc">Mussarela, molho de tomate e manjericão fresco</div></div><div class="item-price">R$ 7,70</div></div>
+      <div class="item-card" data-cat="esfihas"><div class="item-info"><div class="item-name">Milho</div><div class="item-desc">Milho com catupiri ou mussarela</div></div><div class="item-price">R$ 7,70</div></div>
+      <div class="item-card" data-cat="esfihas"><div class="item-info"><div class="item-name">Queijo</div><div class="item-desc">Mussarela</div></div><div class="item-price">R$ 7,00</div></div>
+      <div class="item-card" data-cat="esfihas"><div class="item-info"><div class="item-name">Palmito</div><div class="item-desc">Palmito com catupiri ou mussarela</div></div><div class="item-price">R$ 7,70</div></div>
+      <div class="item-card" data-cat="esfihas"><div class="item-info"><div class="item-name">Peito de Peru</div><div class="item-desc">Peito de peru com catupiri ou mussarela</div></div><div class="item-price">R$ 7,70</div></div>
+    </div>
+    <div class="subcat-title">Doces</div>
+    <div class="items-grid">
+      <div class="item-card" data-cat="esfihas" data-doce="true"><div class="item-info"><div class="item-name">Brigadeiro</div><div class="item-desc">Chocolate e granulado</div><span class="item-badge badge-doce">Doce</span></div><div class="item-price">R$ 9,30</div></div>
+      <div class="item-card" data-cat="esfihas" data-doce="true"><div class="item-info"><div class="item-name">Chocolate</div><div class="item-desc">Chocolate</div><span class="item-badge badge-doce">Doce</span></div><div class="item-price">R$ 9,30</div></div>
+      <div class="item-card" data-cat="esfihas" data-doce="true"><div class="item-info"><div class="item-name">Chocolate com Morango</div><div class="item-desc">Chocolate e morango</div><span class="item-badge badge-doce">Doce</span></div><div class="item-price">R$ 9,30</div></div>
+      <div class="item-card" data-cat="esfihas" data-doce="true"><div class="item-info"><div class="item-name">Chocolate com Banana</div><div class="item-desc">Chocolate e banana</div><span class="item-badge badge-doce">Doce</span></div><div class="item-price">R$ 9,30</div></div>
+      <div class="item-card" data-cat="esfihas" data-doce="true"><div class="item-info"><div class="item-name">MMS</div><div class="item-desc">Chocolate e MMS</div><span class="item-badge badge-doce">Doce</span></div><div class="item-price">R$ 9,30</div></div>
+      <div class="item-card" data-cat="esfihas" data-doce="true"><div class="item-info"><div class="item-name">Prestígio</div><div class="item-desc">Chocolate e coco ralado</div><span class="item-badge badge-doce">Doce</span></div><div class="item-price">R$ 9,30</div></div>
+      <div class="item-card" data-cat="esfihas" data-doce="true"><div class="item-info"><div class="item-name">Romeu e Julieta</div><div class="item-desc">Mussarela e goiabada</div><span class="item-badge badge-doce">Doce</span></div><div class="item-price">R$ 9,30</div></div>
+      <div class="item-card" data-cat="esfihas" data-doce="true"><div class="item-info"><div class="item-name">Nevada de Banana</div><div class="item-desc">Banana e chocolate branco ao forno</div><span class="item-badge badge-doce">Doce</span></div><div class="item-price">R$ 9,30</div></div>
+      <div class="item-card" data-cat="esfihas" data-doce="true"><div class="item-info"><div class="item-name">Nevada de Abacaxi</div><div class="item-desc">Abacaxi e chocolate branco ao forno</div><span class="item-badge badge-doce">Doce</span></div><div class="item-price">R$ 9,30</div></div>
+    </div>
+  </div>
+
+  <!-- ════ FOGAZZAS ════ -->
+  <div class="menu-block" data-section="fogazzas">
+    <h2 class="section-title">Fogazzas</h2>
+    <div class="subcat-title">Salgadas</div>
+    <div class="items-grid">
+      <div class="item-card" data-cat="fogazzas"><div class="item-info"><div class="item-name">2 Queijos</div><div class="item-desc">Mussarela e catupiri</div></div><div class="item-price">R$ 17,90</div></div>
+      <div class="item-card" data-cat="fogazzas"><div class="item-info"><div class="item-name">4 Queijos</div><div class="item-desc">Mussarela, catupiri, parmesão e provolone</div></div><div class="item-price">R$ 17,90</div></div>
+      <div class="item-card" data-cat="fogazzas"><div class="item-info"><div class="item-name">Bacon</div><div class="item-desc">Bacon com catupiri ou mussarela</div></div><div class="item-price">R$ 17,90</div></div>
+      <div class="item-card" data-cat="fogazzas"><div class="item-info"><div class="item-name">Bauru</div><div class="item-desc">Presunto, mussarela e rodela de tomate</div></div><div class="item-price">R$ 17,90</div></div>
+      <div class="item-card" data-cat="fogazzas"><div class="item-info"><div class="item-name">Berinjela</div><div class="item-desc">Berinjela com catupiri ou mussarela</div></div><div class="item-price">R$ 17,90</div></div>
+      <div class="item-card" data-cat="fogazzas"><div class="item-info"><div class="item-name">Brócolis</div><div class="item-desc">Brócolis com catupiri ou mussarela</div></div><div class="item-price">R$ 17,90</div></div>
+      <div class="item-card" data-cat="fogazzas"><div class="item-info"><div class="item-name">Caipira</div><div class="item-desc">Frango, milho e catupiri</div></div><div class="item-price">R$ 17,90</div></div>
+      <div class="item-card" data-cat="fogazzas"><div class="item-info"><div class="item-name">Calabresa</div><div class="item-desc">Calabresa moída</div></div><div class="item-price">R$ 17,90</div></div>
+      <div class="item-card" data-cat="fogazzas"><div class="item-info"><div class="item-name">Calabresa com Catupiri</div><div class="item-desc">Calabresa moída e catupiri ou mussarela</div></div><div class="item-price">R$ 17,90</div></div>
+      <div class="item-card" data-cat="fogazzas"><div class="item-info"><div class="item-name">Carne</div><div class="item-desc">Carne refogada, ervilha, ovo e azeitona</div></div><div class="item-price">R$ 17,90</div></div>
+      <div class="item-card" data-cat="fogazzas"><div class="item-info"><div class="item-name">Carne com Catupiri</div><div class="item-desc">Carne refogada e catupiri ou mussarela</div></div><div class="item-price">R$ 17,90</div></div>
+      <div class="item-card" data-cat="fogazzas"><div class="item-info"><div class="item-name">Carne com Cheddar</div><div class="item-desc">Carne refogada e cheddar</div></div><div class="item-price">R$ 17,90</div></div>
+      <div class="item-card" data-cat="fogazzas"><div class="item-info"><div class="item-name">Escarola</div><div class="item-desc">Escarola refogada e catupiri ou mussarela</div></div><div class="item-price">R$ 17,90</div></div>
+      <div class="item-card" data-cat="fogazzas"><div class="item-info"><div class="item-name">Escarola Especial</div><div class="item-desc">Escarola refogada, bacon, cebola e mussarela</div></div><div class="item-price">R$ 17,90</div></div>
+      <div class="item-card" data-cat="fogazzas"><div class="item-info"><div class="item-name">Frango</div><div class="item-desc">Frango com catupiri ou mussarela</div></div><div class="item-price">R$ 17,90</div></div>
+      <div class="item-card" data-cat="fogazzas"><div class="item-info"><div class="item-name">Lombo</div><div class="item-desc">Lombo defumado e catupiri ou mussarela</div></div><div class="item-price">R$ 17,90</div></div>
+      <div class="item-card" data-cat="fogazzas"><div class="item-info"><div class="item-name">Marguerita</div><div class="item-desc">Mussarela, molho de tomate e manjericão fresco</div></div><div class="item-price">R$ 17,90</div></div>
+      <div class="item-card" data-cat="fogazzas"><div class="item-info"><div class="item-name">Milho</div><div class="item-desc">Milho com catupiri ou mussarela</div></div><div class="item-price">R$ 17,90</div></div>
+      <div class="item-card" data-cat="fogazzas"><div class="item-info"><div class="item-name">Queijo</div><div class="item-desc">Mussarela</div></div><div class="item-price">R$ 17,90</div></div>
+      <div class="item-card" data-cat="fogazzas"><div class="item-info"><div class="item-name">Palmito</div><div class="item-desc">Palmito com catupiri ou mussarela</div></div><div class="item-price">R$ 17,90</div></div>
+      <div class="item-card" data-cat="fogazzas"><div class="item-info"><div class="item-name">Peito de Peru</div><div class="item-desc">Peito de peru com catupiri ou mussarela</div></div><div class="item-price">R$ 17,90</div></div>
+    </div>
+    <div class="subcat-title">Doces</div>
+    <div class="items-grid">
+      <div class="item-card" data-cat="fogazzas" data-doce="true"><div class="item-info"><div class="item-name">Brigadeiro</div><div class="item-desc">Chocolate e granulado</div><span class="item-badge badge-doce">Doce</span></div><div class="item-price">R$ 18,90</div></div>
+      <div class="item-card" data-cat="fogazzas" data-doce="true"><div class="item-info"><div class="item-name">Chocolate</div><div class="item-desc">Chocolate</div><span class="item-badge badge-doce">Doce</span></div><div class="item-price">R$ 18,90</div></div>
+      <div class="item-card" data-cat="fogazzas" data-doce="true"><div class="item-info"><div class="item-name">Chocolate com Morango</div><div class="item-desc">Chocolate e morango</div><span class="item-badge badge-doce">Doce</span></div><div class="item-price">R$ 18,90</div></div>
+      <div class="item-card" data-cat="fogazzas" data-doce="true"><div class="item-info"><div class="item-name">Chocolate com Banana</div><div class="item-desc">Chocolate e banana</div><span class="item-badge badge-doce">Doce</span></div><div class="item-price">R$ 18,90</div></div>
+      <div class="item-card" data-cat="fogazzas" data-doce="true"><div class="item-info"><div class="item-name">MMS</div><div class="item-desc">Chocolate e MMS</div><span class="item-badge badge-doce">Doce</span></div><div class="item-price">R$ 18,90</div></div>
+      <div class="item-card" data-cat="fogazzas" data-doce="true"><div class="item-info"><div class="item-name">Prestígio</div><div class="item-desc">Chocolate e coco ralado</div><span class="item-badge badge-doce">Doce</span></div><div class="item-price">R$ 18,90</div></div>
+      <div class="item-card" data-cat="fogazzas" data-doce="true"><div class="item-info"><div class="item-name">Romeu e Julieta</div><div class="item-desc">Mussarela e goiabada</div><span class="item-badge badge-doce">Doce</span></div><div class="item-price">R$ 18,90</div></div>
+      <div class="item-card" data-cat="fogazzas" data-doce="true"><div class="item-info"><div class="item-name">Nevada de Banana</div><div class="item-desc">Banana e chocolate branco ao forno</div><span class="item-badge badge-doce">Doce</span></div><div class="item-price">R$ 18,90</div></div>
+      <div class="item-card" data-cat="fogazzas" data-doce="true"><div class="item-info"><div class="item-name">Nevada de Abacaxi</div><div class="item-desc">Abacaxi e chocolate branco ao forno</div><span class="item-badge badge-doce">Doce</span></div><div class="item-price">R$ 18,90</div></div>
+    </div>
+  </div>
+
+  <!-- ════ PORÇÕES ════ -->
+  <div class="menu-block" data-section="porcoes">
+    <h2 class="section-title">Porções</h2>
+    <div class="items-grid">
+      <div class="item-card" data-cat="porcoes"><div class="item-info"><div class="item-name">Batata Frita com Cheddar e Bacon</div><div class="item-desc">Maravilhosa batata frita com cheddar e bacon</div></div><div class="item-price">R$ 44,90</div></div>
+      <div class="item-card" data-cat="porcoes"><div class="item-info"><div class="item-name">Batata Frita</div><div class="item-desc">Deliciosa batata frita crocante</div></div><div class="item-price">R$ 39,90</div></div>
+      <div class="item-card" data-cat="porcoes"><div class="item-info"><div class="item-name">Calabresa Acebolada</div><div class="item-desc">Calabresa defumada com cebola</div></div><div class="item-price">R$ 39,90</div></div>
+    </div>
+  </div>
+
+  <!-- ════ BEBIDAS ════ -->
+  <div class="menu-block" data-section="bebidas">
+    <h2 class="section-title">Bebidas</h2>
+    <div class="subcat-title">Não Alcoólicas</div>
+    <div class="items-grid">
+      <div class="item-card" data-cat="bebidas"><div class="item-info"><div class="item-name">Suco Polpa 350ml</div><div class="item-desc">Laranja, acerola, abacaxi, goiaba, maracujá, morango, laranja com acerola, abacaxi com hortelã</div></div><div class="item-price">R$ 10,90</div></div>
+      <div class="item-card" data-cat="bebidas"><div class="item-info"><div class="item-name">Refrigerantes Lata</div><div class="item-desc">Coca-Cola, Coca-Zero, Fanta, Sprite, Guaraná e outros</div></div><div class="item-price">R$ 8,90</div></div>
+      <div class="item-card" data-cat="bebidas"><div class="item-info"><div class="item-name">Água sem gás</div><div class="item-desc">Água natural</div></div><div class="item-price">R$ 6,90</div></div>
+      <div class="item-card" data-cat="bebidas"><div class="item-info"><div class="item-name">Água com gás</div><div class="item-desc">Água gaseificada</div></div><div class="item-price">R$ 8,90</div></div>
+      <div class="item-card" data-cat="bebidas"><div class="item-info"><div class="item-name">H2O</div><div class="item-desc">Refresco de limão gaseificado</div></div><div class="item-price">R$ 10,90</div></div>
+    </div>
+    <div class="subcat-title">Cervejas</div>
+    <div class="items-grid">
+      <div class="item-card" data-cat="bebidas"><div class="item-info"><div class="item-name">Cervejas 600ml</div><div class="item-desc">Skol e Original</div></div><div class="item-price">R$ 16,90</div></div>
+      <div class="item-card" data-cat="bebidas"><div class="item-info"><div class="item-name">Cervejas Premium 600ml</div><div class="item-desc">Heineken</div><span class="item-badge badge-especial">Premium</span></div><div class="item-price">R$ 17,90</div></div>
+    </div>
+  </div>
+
+  <!-- ════ DRINKS ════ -->
+  <div class="menu-block" data-section="drinks">
+    <h2 class="section-title">🍹 Drinks</h2>
+
+    <div class="drink-hero">
+      <p>"Como não experimentar esses drinks maravilhosos — bora descontrair e se divertir? Aproveite!"</p>
+    </div>
+
+    <div class="subcat-title">Caipirinha & Clássicos</div>
+    <div class="drinks-grid">
+      <div class="drink-card" data-cat="drinks">
+        <img src="https://images.unsplash.com/photo-1609951651556-5334e2706168?q=80&w=800&auto=format&fit=crop" alt="Caipirinha Pinga">
+        <div class="drink-info">
+          <div class="drink-name">Caipirinha (Pinga)</div>
+          <div class="drink-desc">Limão ou Morango</div>
+          <div class="drink-price">R$ 23,90</div>
+        </div>
+      </div>
+      <div class="drink-card" data-cat="drinks">
+        <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=800&auto=format&fit=crop" alt="Caipiroska Vodka">
+        <div class="drink-info">
+          <div class="drink-name">Caipiroska (Vodka)</div>
+          <div class="drink-desc">Limão ou Morango</div>
+          <div class="drink-price">R$ 25,90</div>
+        </div>
+      </div>
+      <div class="drink-card" data-cat="drinks">
+        <img src="https://images.unsplash.com/photo-1583753938588-5ea4d55c2059?q=80&w=800&auto=format&fit=crop" alt="Caipirinha Saquê">
+        <div class="drink-info">
+          <div class="drink-name">Caipirinha (Saquê)</div>
+          <div class="drink-desc">Limão ou Morango</div>
+          <div class="drink-price">R$ 29,90</div>
+        </div>
+      </div>
+      <div class="drink-card" data-cat="drinks">
+        <img src="https://images.unsplash.com/photo-1541614101331-1a5a3a194e92?q=80&w=800&auto=format&fit=crop" alt="Caipirinha Yakult">
+        <div class="drink-info">
+          <div class="drink-name">Caipirinha Yakult</div>
+          <div class="drink-desc">Vodka, Limão e Yakult</div>
+          <div class="drink-price">R$ 29,90</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subcat-title">Drinks Especiais</div>
+    <div class="drinks-grid">
+      <div class="drink-card" data-cat="drinks">
+        <img src="https://images.unsplash.com/photo-1551538827-9c037cb4f32a?q=80&w=800&auto=format&fit=crop" alt="Lagoa Azul">
+        <div class="drink-info">
+          <div class="drink-name">Lagoa Azul</div>
+          <div class="drink-desc">Gin, Vodka, Curaçao, Soda e Limão</div>
+          <div class="drink-price">R$ 29,90</div>
+        </div>
+      </div>
+      <div class="drink-card" data-cat="drinks">
+        <img src="https://images.unsplash.com/photo-1560512823-829485b8bf24?q=80&w=800&auto=format&fit=crop" alt="Sex on the Beach">
+        <div class="drink-info">
+          <div class="drink-name">Sex on the Beach</div>
+          <div class="drink-desc">Vodka, Licor de Pêssego, Groselha e Suco de Laranja</div>
+          <div class="drink-price">R$ 29,90</div>
+        </div>
+      </div>
+      <div class="drink-card" data-cat="drinks">
+        <img src="https://images.unsplash.com/photo-1587223962930-cb7f31384c19?q=80&w=800&auto=format&fit=crop" alt="Pera Red Bull Tropical">
+        <div class="drink-info">
+          <div class="drink-name">Pera Red Bull Tropical</div>
+          <div class="drink-desc">Gin Pera, Red Bull Tropical e Laranja</div>
+          <div class="drink-price">R$ 29,90</div>
+        </div>
+      </div>
+      <div class="drink-card" data-cat="drinks">
+        <img src="https://images.unsplash.com/photo-1571950006418-f3a7e33c8c14?q=80&w=800&auto=format&fit=crop" alt="Gin Tonic">
+        <div class="drink-info">
+          <div class="drink-name">Gin Tonic</div>
+          <div class="drink-desc">Gin, Limão e Água Tônica</div>
+          <div class="drink-price">R$ 29,90</div>
+        </div>
+      </div>
+      <div class="drink-card" data-cat="drinks">
+        <img src="https://images.unsplash.com/photo-1574870111867-089730e5a72b?q=80&w=800&auto=format&fit=crop" alt="La Sicilia">
+        <div class="drink-info">
+          <div class="drink-name">La Sicilia</div>
+          <div class="drink-desc">Gin Pera, Uva Thompson, Manjericão e Limão Siciliano</div>
+          <div class="drink-price">R$ 29,90</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subcat-title">Vinhos</div>
+    <div class="drinks-grid">
+      <div class="drink-card" data-cat="drinks">
+        <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=800&auto=format&fit=crop" alt="Vinho da Casa Taça">
+        <div class="drink-info">
+          <div class="drink-name">Vinho da Casa — Taça</div>
+          <div class="drink-desc">Tinto Suave, Tinto Seco, Branco Suave, Branco Seco</div>
+          <div class="drink-price">R$ 9,90</div>
+        </div>
+      </div>
+      <div class="drink-card" data-cat="drinks">
+        <img src="https://images.unsplash.com/photo-1474722883778-792e7990302f?q=80&w=800&auto=format&fit=crop" alt="Vinho da Casa 600ml">
+        <div class="drink-info">
+          <div class="drink-name">Vinho da Casa — 600ml</div>
+          <div class="drink-desc">Tinto Suave, Tinto Seco, Branco Suave, Branco Seco</div>
+          <div class="drink-price">R$ 24,90</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── EMPTY STATE ── -->
+  <div class="empty-state" id="emptyState">
+    <div style="font-size:60px;">🍕</div>
+    <p>Nenhum item encontrado. Tente outro termo!</p>
+  </div>
+
+  <!-- ── CTA ── -->
+  <div class="cta-bottom">
+    <h2>Pronto para pedir?</h2>
+    <p>Faça seu pedido agora pelo WhatsApp ou pelo iFood e receba quentinho!</p>
+    <a href="https://wa.me/5511997281316?text=Ol%C3%A1!%20Vi%20o%20card%C3%A1pio%20online%20e%20gostaria%20de%20fazer%20um%20pedido.%20Segue%20minha%20lista%3A%20" class="btn" target="_blank">📱 Pedir pelo WhatsApp</a>
+    <a href="https://www.ifood.com.br/delivery/sao-bernardo-do-campo-sp/pizzaria-3-em-1--pizzas---esfihas-e-fogazzas--pauliceia/15c0d2d4-c24c-49c1-bb92-0055442c9f05?openCart=true" class="btn-ghost" target="_blank">Pedir pelo iFood</a>
+  </div>
+
+</div>
+
+<!-- ── FAB MENU ── -->
+<div class="fab-wrap">
+  <button class="fab-top" id="fabTop" title="Voltar ao topo">↑</button>
+  <div class="fab-socials" id="fabSocials">
+    <!-- TikTok -->
+    <a class="fab-social-btn fab-tiktok" href="https://www.tiktok.com/@3em1pizzaria" target="_blank" title="TikTok">
+      <svg viewBox="0 0 24 24" fill="white" width="20" height="20"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/></svg>
+    </a>
+    <!-- Instagram -->
+    <a class="fab-social-btn fab-insta" href="https://www.instagram.com/3em1pizzaria/" target="_blank" title="Instagram">
+      <svg viewBox="0 0 24 24" fill="white" width="20" height="20"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+    </a>
+    <!-- iFood -->
+    <a class="fab-social-btn fab-ifood" href="https://www.ifood.com.br/delivery/sao-bernardo-do-campo-sp/pizzaria-3-em-1--pizzas---esfihas-e-fogazzas--pauliceia/15c0d2d4-c24c-49c1-bb92-0055442c9f05?openCart=true" target="_blank" title="iFood">
+      <svg viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg" width="28" height="14">
+        <text x="50" y="38" font-family="Arial Black, Helvetica, sans-serif" font-size="38" font-weight="900" fill="white" text-anchor="middle" letter-spacing="-1">ifood</text>
+        <path d="M18 46 Q50 58 82 46" stroke="white" stroke-width="4" stroke-linecap="round" fill="none"/>
+        <circle cx="82" cy="46" r="4" fill="white"/>
+      </svg>
+    </a>
+    <!-- WhatsApp -->
+    <a class="fab-social-btn fab-wpp" href="https://wa.me/5511997281316?text=Ol%C3%A1!%20Vi%20o%20card%C3%A1pio%20online%20e%20gostaria%20de%20fazer%20um%20pedido" target="_blank" title="WhatsApp">
+      <svg viewBox="0 0 24 24" fill="white" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+    </a>
+  </div>
+  <button class="fab-main" id="fabMain" title="Contatos e redes sociais">🍕</button>
+</div>
+
+<script>
+  // ── FAB Menu
+  const fabMain = document.getElementById('fabMain');
+  const fabSocials = document.getElementById('fabSocials');
+  const fabTop = document.getElementById('fabTop');
+
+  fabMain.addEventListener('click', () => {
+    const isOpen = fabSocials.classList.toggle('open');
+    fabMain.classList.toggle('open', isOpen);
+    fabMain.textContent = isOpen ? '+' : '🍕';
+  });
+  fabSocials.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      fabSocials.classList.remove('open');
+      fabMain.classList.remove('open');
+      fabMain.textContent = '🍕';
+    });
+  });
+  window.addEventListener('scroll', () => {
+    fabTop.classList.toggle('visible', window.scrollY > 300);
+  });
+  fabTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  const allCards = document.querySelectorAll('.item-card');
+  const allBlocks = document.querySelectorAll('.menu-block');
+  const searchInput = document.getElementById('searchInput');
+  const emptyState = document.getElementById('emptyState');
+  const pizzaSubcats = document.getElementById('pizzaSubcats');
+
+  // ── Tab filter
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      searchInput.value = '';
+
+      const tab = btn.dataset.tab;
+      pizzaSubcats.classList.toggle('visible', tab === 'pizzas');
+
+      // Reset pizza subcat
+      document.querySelectorAll('.subcat-pill').forEach(p => p.classList.remove('active'));
+      const allPill = document.querySelector('[data-subcat="all-pizza"]');
+      if (allPill) allPill.classList.add('active');
+
+      applyFilter(tab, 'all-pizza');
+    });
+  });
+
+  // ── Pizza subcategory pills
+  document.querySelectorAll('.subcat-pill').forEach(pill => {
+    pill.addEventListener('click', () => {
+      document.querySelectorAll('.subcat-pill').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      applyFilter('pizzas', pill.dataset.subcat);
+    });
+  });
+
+  function applyFilter(tab, pizzaSub) {
+    let anyVisible = false;
+
+    allCards.forEach(card => {
+      const cat = card.dataset.cat;
+      const sub = card.dataset.sub || '';
+      const isDoce = card.dataset.doce === 'true';
+      let show = false;
+
+      if (tab === 'all') {
+        show = true;
+      } else if (tab === 'doces') {
+        show = isDoce;
+      } else if (tab === 'pizzas') {
+        if (cat !== 'pizzas') { show = false; }
+        else if (pizzaSub === 'all-pizza') { show = true; }
+        else { show = sub === pizzaSub; }
+      } else {
+        show = cat === tab;
+      }
+
+      card.classList.toggle('hidden', !show);
+      if (show) anyVisible = true;
+    });
+
+    // drink-cards
+    document.querySelectorAll('.drink-card').forEach(card => {
+      const show = tab === 'all' || tab === 'drinks';
+      card.classList.toggle('hidden', !show);
+      if (show) anyVisible = true;
+    });
+
+    // Show/hide section titles
+    allBlocks.forEach(block => {
+      const sec = block.dataset.section;
+      let showBlock = false;
+      if (tab === 'all') { showBlock = true; }
+      else if (tab === 'doces') { showBlock = sec !== 'porcoes' && sec !== 'bebidas'; }
+      else if (tab === sec) { showBlock = true; }
+      else if (tab === 'pizzas' && sec === 'pizzas') { showBlock = true; }
+      else if (tab === 'bebidas' && sec === 'bebidas') { showBlock = true; }
+      else if (tab === 'porcoes' && sec === 'porcoes') { showBlock = true; }
+      else if (tab === 'drinks' && sec === 'drinks') { showBlock = true; }
+      block.style.display = showBlock ? '' : 'none';
+    });
+
+    emptyState.classList.toggle('visible', !anyVisible);
+  }
+
+  // ── Search
+  searchInput.addEventListener('input', () => {
+    const q = searchInput.value.toLowerCase().trim();
+
+    if (!q) {
+      const activeTab = document.querySelector('.tab-btn.active').dataset.tab;
+      const activeSub = document.querySelector('.subcat-pill.active')?.dataset.subcat || 'all-pizza';
+      applyFilter(activeTab, activeSub);
+      return;
+    }
+
+    // Reset tabs visually
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelector('[data-tab="all"]').classList.add('active');
+    allBlocks.forEach(b => b.style.display = '');
+    pizzaSubcats.classList.remove('visible');
+
+    let anyVisible = false;
+    allCards.forEach(card => {
+      const name = card.querySelector('.item-name').textContent.toLowerCase();
+      const desc = card.querySelector('.item-desc').textContent.toLowerCase();
+      const match = name.includes(q) || desc.includes(q);
+      card.classList.toggle('hidden', !match);
+      if (match) anyVisible = true;
+    });
+
+    document.querySelectorAll('.drink-card').forEach(card => {
+      const name = card.querySelector('.drink-name').textContent.toLowerCase();
+      const desc = card.querySelector('.drink-desc').textContent.toLowerCase();
+      const match = name.includes(q) || desc.includes(q);
+      card.classList.toggle('hidden', !match);
+      if (match) anyVisible = true;
+    });
+
+    emptyState.classList.toggle('visible', !anyVisible);
+  });
+</script>
+</body>
+</html>
