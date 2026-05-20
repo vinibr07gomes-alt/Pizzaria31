@@ -588,7 +588,7 @@
 </ul>
      <!-- Botões contato -->
       <!-- botão email -->
-     <div class="email-wrap">
+     <div class="email-wrap" id="email">
   <button class="email-btn">
     <span class="email-waves"></span>
 
@@ -601,6 +601,7 @@
     </span>
   </button>
   <!-- botão email -->
+   
 </div>
    </div>
   </div>
@@ -611,6 +612,14 @@
  const btnArrow = document.getElementById('btn-arrow');
  const content = document.getElementById('content-extra');
 const icon = btnArrow.querySelector('i');
+const emailBtn = document.querySelector('.email-wrap'); 
+
+function gotoMail(){
+  setTimeout(() => {
+    window.location.href ="mailto:contato@3em1pizzaria.com.br";
+  }, 900);
+  
+}
   // Sampa script base
   function abrir() {
     icon.classList.replace('fa-angle-down', 'fa-angle-up');
@@ -632,6 +641,7 @@ function verificar() {
 }
 
 btnArrow.addEventListener('click', verificar);
+emailBtn.addEventListener('click', gotoMail);
   // Sampa script base
   
 </script>
