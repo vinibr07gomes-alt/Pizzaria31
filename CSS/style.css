@@ -144,16 +144,13 @@
       line-height: 1;
     }
 
-    /* ── Bebas Neue aplicado em TODOS os tamanhos ── */
-    .logo-text {
-      font-family: 'Bebas Neue', sans-serif !important;
-      font-size: 22px;
-      letter-spacing: 2px;
-      line-height: 1;
-    }
+    /* ── DESKTOP: fonte Bebas Neue no nome da pizzaria ── */
     @media (min-width: 769px) {
       .logo-text {
+        font-family: 'Bebas Neue', 'Playfair Display', serif;
         font-size: 26px;
+        letter-spacing: 2px;
+        line-height: 1;
       }
     }
 
