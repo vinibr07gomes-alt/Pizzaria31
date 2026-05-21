@@ -1415,6 +1415,7 @@
     justify-content:center;
     align-items:center;
     margin:60px auto;
+    padding:0 16px;
 }
 
 /* BOTÃO */
@@ -1424,7 +1425,11 @@
 
     display:flex;
     align-items:center;
+    justify-content:center;
     gap:16px;
+
+    width:100%;
+    max-width:420px;
 
     padding:18px 42px;
 
@@ -1491,15 +1496,10 @@
 
 @keyframes waveMove{
     from{
-        transform:
-            translateY(15%)
-            rotate(0deg);
+        transform:translateY(15%) rotate(0deg);
     }
-
     to{
-        transform:
-            translateY(-12%)
-            rotate(360deg);
+        transform:translateY(-12%) rotate(360deg);
     }
 }
 
@@ -1509,7 +1509,8 @@
     z-index:2;
 
     width:44px;
-    height:44px;
+    aspect-ratio:1/1;
+    flex-shrink:0;
 
     display:flex;
     align-items:center;
@@ -1517,12 +1518,11 @@
 
     border-radius:50%;
 
-    background:
-        linear-gradient(
-            135deg,
-            var(--gold-light),
-            var(--gold)
-        );
+    background:linear-gradient(
+        135deg,
+        var(--gold-light),
+        var(--gold)
+    );
 
     color:#000;
     font-size:18px;
@@ -1538,12 +1538,12 @@
 .email-text{
     position:relative;
     z-index:2;
+    white-space:nowrap;
 }
 
 /* HOVER */
 .email-btn:hover{
     transform:translateY(-4px);
-
     border-color:var(--gold);
 
     box-shadow:
@@ -1568,6 +1568,25 @@
 /* CLICK */
 .email-btn:active{
     transform:scale(.97);
+}
+
+/* MOBILE */
+@media (max-width:600px){
+    .email-btn{
+        padding:14px 20px;
+        gap:12px;
+        font-size:14px;
+    }
+
+    .email-icon{
+        width:40px;
+        font-size:16px;
+    }
+
+    .email-text{
+        white-space:normal;
+        text-align:left;
+    }
 }
 .career-list{
     max-width:620px;
