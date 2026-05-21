@@ -70,6 +70,79 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- Style.css -->
    <link rel="stylesheet" href="../CSS/style.css">
+
+  <!-- ══ CORREÇÕES RESPONSIVIDADE E FONTE ══ -->
+  <style>
+    /* ── Imagens dos Rodízios ── */
+    .rodizio-box-img-wrap {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 12px 12px 0 0;
+    }
+
+    .rodizio-box-img-wrap img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+    }
+
+    @media (max-width: 640px) {
+      .rodizio-box-img-wrap img {
+        height: 200px;
+      }
+    }
+
+    /* ── Carrossel: imagens sem corte ── */
+    .carousel-track-outer {
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .carousel-track {
+      display: flex;
+      width: 100%;
+    }
+
+    .carousel-slide {
+      flex: 0 0 100%;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .carousel-slide img {
+        height: 280px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .carousel-slide img {
+        height: 220px;
+      }
+    }
+
+    /* ── Footer logo: fonte Bebas Neue igual ao header ── */
+    .footer-logo {
+      font-family: 'Bebas Neue', 'Playfair Display', serif !important;
+      font-size: 36px !important;
+      font-weight: 400 !important;
+      letter-spacing: 3px !important;
+      color: var(--gold, #f39c12) !important;
+      line-height: 1 !important;
+      margin-bottom: 12px !important;
+    }
+  </style>
 </head>
 <body>
 
