@@ -167,6 +167,179 @@
       line-height: 1 !important;
       margin-bottom: 12px !important;
     }
+
+    /* ═══════════════════════════════
+       BOTÕES DE CONTATO — ondas douradas
+    ═══════════════════════════════ */
+    .contact-btns-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 16px;
+      margin: 40px auto 0;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    /* botão base */
+    .contact-btn {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 28px;
+      border: 2px solid rgba(243,156,18,.18);
+      border-radius: 60px;
+      background: linear-gradient(135deg, #111 0%, #171717 100%);
+      color: #fff;
+      font-family: 'Bebas Neue', Impact, Arial Narrow, sans-serif;
+      font-size: 18px;
+      font-weight: 400;
+      letter-spacing: 1.5px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all .45s cubic-bezier(.4,0,.2,1);
+      box-shadow: 0 10px 40px rgba(0,0,0,.45), inset 0 0 0 1px rgba(255,255,255,.03);
+      white-space: nowrap;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    /* ondas animadas */
+    .contact-btn-waves {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      border-radius: 60px;
+      z-index: 0;
+    }
+    .contact-btn-waves::before,
+    .contact-btn-waves::after {
+      content: '';
+      position: absolute;
+      width: 220%; height: 220%;
+      left: -60%;
+      border-radius: 42%;
+      background: radial-gradient(circle, rgba(243,156,18,.18), rgba(243,156,18,.04) 55%, transparent 70%);
+      animation: cbWave 12s linear infinite;
+    }
+    .contact-btn-waves::after {
+      animation-duration: 18s;
+      animation-direction: reverse;
+      opacity: .65;
+    }
+    @keyframes cbWave {
+      from { transform: translateY(15%) rotate(0deg); }
+      to   { transform: translateY(-12%) rotate(360deg); }
+    }
+
+    /* ícone circular dourado */
+    .contact-btn-icon {
+      position: relative;
+      z-index: 2;
+      width: 44px; height: 44px; min-width: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #f5b942, #f39c12);
+      color: #000;
+      font-size: 18px;
+      font-weight: 900;
+      box-shadow: 0 0 25px rgba(243,156,18,.35);
+      transition: .4s;
+      flex-shrink: 0;
+    }
+
+    /* texto */
+    .contact-btn-text {
+      position: relative;
+      z-index: 2;
+      text-align: left;
+      flex: 1;
+    }
+
+    /* hover */
+    .contact-btn:hover {
+      transform: translateY(-4px);
+      border-color: #f39c12;
+      box-shadow: 0 18px 55px rgba(243,156,18,.18), inset 0 0 0 1px rgba(243,156,18,.25);
+    }
+    .contact-btn:hover .contact-btn-icon {
+      transform: rotate(-12deg) scale(1.12);
+      box-shadow: 0 0 35px rgba(243,156,18,.55);
+    }
+    .contact-btn:hover .contact-btn-waves::before { animation-duration: 7s; }
+    .contact-btn:hover .contact-btn-waves::after  { animation-duration: 10s; }
+    .contact-btn:active { transform: scale(.97); }
+
+    @media (max-width: 560px) {
+      .contact-btns-wrap { max-width: 100%; }
+      .contact-btn { padding: 14px 20px; font-size: 16px; letter-spacing: 1px; }
+      .contact-btn-icon { width: 38px; height: 38px; min-width: 38px; }
+    }
+
+    /* ── Seletor de vagas ── */
+    .vagas-titulo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 16px;
+      letter-spacing: 2px;
+      color: var(--gold, #f39c12);
+      text-transform: uppercase;
+      margin: 28px 0 14px;
+      text-align: center;
+    }
+    .vagas-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      max-width: 500px;
+      margin: 0 auto 28px;
+    }
+    .vaga-chip input[type="checkbox"] { display: none; }
+    .vaga-chip label {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 18px;
+      border-radius: 40px;
+      border: 2px solid rgba(243,156,18,.25);
+      background: #111;
+      color: #aaa;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 15px;
+      letter-spacing: 1.5px;
+      cursor: pointer;
+      transition: all .25s;
+      user-select: none;
+    }
+    .vaga-chip label::before {
+      content: '';
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      border: 2px solid rgba(243,156,18,.4);
+      background: transparent;
+      flex-shrink: 0;
+      transition: all .25s;
+    }
+    .vaga-chip input:checked + label {
+      border-color: #f39c12;
+      background: rgba(243,156,18,.12);
+      color: #f39c12;
+    }
+    .vaga-chip input:checked + label::before {
+      background: #f39c12;
+      border-color: #f39c12;
+      box-shadow: 0 0 8px rgba(243,156,18,.5);
+    }
+    .vaga-chip label:hover { border-color: rgba(243,156,18,.5); color: #ddd; }
+    .wpp-btn-disabled {
+      opacity: .45;
+      pointer-events: none;
+      filter: grayscale(.4);
+    }
   </style>
 </head>
 <body>
@@ -725,22 +898,48 @@
   <li>Pequeno texto se apresentando</li>
 </ul>
      <!-- Botões contato -->
-      <!-- botão email -->
-     <div class="email-wrap" id="email">
-  <button class="email-btn">
-    <span class="email-waves"></span>
+     <div class="contact-btns-wrap" id="email">
 
-    <span class="email-icon">
-      ✉
-    </span>
+       <!-- Email -->
+       <button class="contact-btn" onclick="setTimeout(()=>{window.location.href='mailto:contato@3em1pizzaria.com.br'},200)" aria-label="Enviar e-mail">
+         <span class="contact-btn-waves"></span>
+         <span class="contact-btn-icon">
+           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+         </span>
+         <span class="contact-btn-text">contato@3em1pizzaria.com.br</span>
+       </button>
 
-    <span class="email-text">
-      contato@3em1pizzaria.com.br
-    </span>
-  </button>
-  <!-- botão email -->
-   
-</div>
+       <!-- Instagram do dono -->
+       <a class="contact-btn" href="https://www.instagram.com/riccardomoliner/" target="_blank" rel="noopener" aria-label="Instagram do responsável">
+         <span class="contact-btn-waves"></span>
+         <span class="contact-btn-icon">
+           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+         </span>
+         <span class="contact-btn-text">@riccardomoliner</span>
+       </a>
+
+     </div>
+
+     <!-- Seletor de vagas -->
+     <p class="vagas-titulo">Selecione o(s) serviço(s) que deseja oferecer</p>
+     <div class="vagas-grid" id="vagasGrid">
+       <span class="vaga-chip"><input type="checkbox" id="v1" value="Recepcionista"><label for="v1">Recepcionista</label></span>
+       <span class="vaga-chip"><input type="checkbox" id="v2" value="Garçom"><label for="v2">Garçom</label></span>
+       <span class="vaga-chip"><input type="checkbox" id="v3" value="Pizzaiolo"><label for="v3">Pizzaiolo</label></span>
+       <span class="vaga-chip"><input type="checkbox" id="v4" value="Ajudante de Cozinha"><label for="v4">Ajudante de Cozinha</label></span>
+       <span class="vaga-chip"><input type="checkbox" id="v5" value="Auxiliar de Limpeza"><label for="v5">Auxiliar de Limpeza</label></span>
+     </div>
+
+     <!-- Botão WhatsApp dinâmico -->
+     <div style="max-width:500px;margin:0 auto;">
+       <a class="contact-btn wpp-btn-disabled" id="wppVagaBtn" href="#" target="_blank" rel="noopener" aria-label="Enviar candidatura pelo WhatsApp">
+         <span class="contact-btn-waves"></span>
+         <span class="contact-btn-icon">
+           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+         </span>
+         <span class="contact-btn-text" id="wppVagaTexto">Selecione uma vaga acima</span>
+       </a>
+     </div>
    </div>
   </div>
 </section>
@@ -779,9 +978,40 @@ function verificar() {
 }
 
 btnArrow.addEventListener('click', verificar);
-emailBtn.addEventListener('click', gotoMail);
-  // Sampa script base
-  
+
+  // ── Seletor de vagas WhatsApp ──
+  const wppBtn = document.getElementById('wppVagaBtn');
+  const wppTexto = document.getElementById('wppVagaTexto');
+  const checkboxes = document.querySelectorAll('#vagasGrid input[type="checkbox"]');
+
+  function atualizarWpp() {
+    const selecionados = [...checkboxes]
+      .filter(c => c.checked)
+      .map(c => c.value);
+
+    if (selecionados.length === 0) {
+      wppBtn.classList.add('wpp-btn-disabled');
+      wppBtn.href = '#';
+      wppTexto.textContent = 'Selecione uma vaga acima';
+      return;
+    }
+
+    const lista = selecionados.length === 1
+      ? selecionados[0]
+      : selecionados.slice(0, -1).join(', ') + ' e ' + selecionados.slice(-1);
+
+    const msg = encodeURIComponent(
+      'Olá! Gostaria de trabalhar no estabelecimento. ' +
+      'O(s) serviço(s) que posso oferecer: ' + lista + '.'
+    );
+
+    wppBtn.classList.remove('wpp-btn-disabled');
+    wppBtn.href = 'https://wa.me/5511997281316?text=' + msg;
+    wppTexto.textContent = '(11) 99728-1316 — Enviar candidatura';
+  }
+
+  checkboxes.forEach(c => c.addEventListener('change', atualizarWpp));
+
 </script>
 <!-- ══════════════════════════════════════════
      FOOTER PREMIUM
