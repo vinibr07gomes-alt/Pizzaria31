@@ -265,3 +265,32 @@
       pointer-events: none;
       filter: grayscale(.4);
     }
+
+    /* ── Carrossel: caption responsivo ── */
+@media (max-width: 600px) {
+  .carousel-caption {
+    font-size: 14px;
+    padding: 30px 16px 14px;
+  }
+  .carousel-slide img {
+    height: 240px;
+  }
+  .carousel-wrapper {
+    padding: 0 36px !important;
+  }
+  .carousel-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  .carousel-caption {
+    font-size: 13px;
+    padding: 24px 12px 12px;
+  }
+  .carousel-slide img {
+    height: 200px;
+  }
+}

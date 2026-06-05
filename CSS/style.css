@@ -356,6 +356,7 @@
     .mobile-nav.open a:nth-child(7)  { animation: navLinkIn 0.4s 0.60s cubic-bezier(0.22,1,0.36,1) forwards; }
     .mobile-nav.open a:nth-child(8)  { animation: navLinkIn 0.4s 0.66s cubic-bezier(0.22,1,0.36,1) forwards; }
     .mobile-nav.open a:nth-child(9)  { animation: navLinkIn 0.4s 0.72s cubic-bezier(0.22,1,0.36,1) forwards; }
+    .mobile-nav.open a:nth-child(10) { animation: navLinkIn 0.4s 0.78s cubic-bezier(0.22,1,0.36,1) forwards; }
 
     .mobile-nav-close {
       position: absolute;
