@@ -58,14 +58,16 @@
           <span class="fl">QUANTAS PESSOAS (ESTIMATIVA)</span>
         </div>
         <div class="fc">
-          <div class="counter-row">
-            <div class="counter-val empty" id="est-pval">Selecione a quantidade</div>
-            <div class="counter-btns">
-              <button class="cbtn" data-cid="est" data-dir="-1" aria-label="Diminuir">&#8722;</button>
-              <button class="cbtn" data-cid="est" data-dir="1" aria-label="Aumentar">+</button>
+          <div class="sel-wrap people-select">
+            <div class="sel-display" id="est-pd" tabindex="0" role="button" aria-haspopup="listbox">
+              <span class="sel-txt">Selecione a quantidade</span>
+              <i class="fa-solid fa-chevron-down arr"></i>
+            </div>
+            <div class="sel-drop" id="est-pdrop">
+              <div class="sel-inner" id="est-pinner"></div>
             </div>
           </div>
-          <input type="hidden" id="est-p" value="0"/>
+          <input type="hidden" id="est-p" value=""/>
         </div>
       </div>
       <!-- horário -->
@@ -132,14 +134,16 @@
           <span class="fl">N&#218;MERO TOTAL DE PESSOAS</span>
         </div>
         <div class="fc">
-          <div class="counter-row">
-            <div class="counter-val empty" id="tot-pval">Selecione a quantidade</div>
-            <div class="counter-btns">
-              <button class="cbtn" data-cid="tot" data-dir="-1" aria-label="Diminuir">&#8722;</button>
-              <button class="cbtn" data-cid="tot" data-dir="1" aria-label="Aumentar">+</button>
+          <div class="sel-wrap people-select">
+            <div class="sel-display" id="tot-pd" tabindex="0" role="button" aria-haspopup="listbox">
+              <span class="sel-txt">Selecione a quantidade</span>
+              <i class="fa-solid fa-chevron-down arr"></i>
+            </div>
+            <div class="sel-drop" id="tot-pdrop">
+              <div class="sel-inner" id="tot-pinner"></div>
             </div>
           </div>
-          <input type="hidden" id="tot-p" value="0"/>
+          <input type="hidden" id="tot-p" value=""/>
         </div>
       </div>
       <!-- horário -->

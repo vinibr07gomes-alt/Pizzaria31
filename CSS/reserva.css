@@ -139,20 +139,8 @@
     .finput::placeholder{color:var(--gray);font-weight:400;}
     .field-hint{font-size:11px;color:var(--gray-dim);padding:4px 4px 0;font-style:italic;}
 
-    /* ── COUNTER ── */
-    .counter-row{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;flex:1;}
-    .counter-val{font-size:16px;font-weight:500;color:var(--white);}
-    .counter-val.empty{color:var(--gray);font-weight:400;}
-    .counter-btns{display:flex;gap:8px;}
-    .cbtn{
-      width:32px;height:32px;border-radius:50%;
-      background:rgba(245,168,0,.15);color:var(--gold);font-size:18px;font-weight:700;
-      display:flex;align-items:center;justify-content:center;
-      border:1px solid var(--border-field);
-      transition:background var(--tr),transform var(--tr);
-    }
-    .cbtn:hover{background:rgba(245,168,0,.3);transform:scale(1.1);}
-    .cbtn:active{transform:scale(.92);}
+    /* ── SELECT PESSOAS / HORÁRIO ── */
+    .people-select .sel-drop.open{max-height:230px;}
 
     /* ── DROPDOWN HORÁRIO ── */
     .sel-wrap{position:relative;flex:1;}
@@ -298,7 +286,7 @@
       .leaf-ornament{width:34px;height:50px;}
       .logo-name{font-size:16px;letter-spacing:2px;}
       .tab-btn{font-size:12px;letter-spacing:1px;}
-      .sel-display,.cal-display,.counter-val{font-size:14px;}
+      .sel-display,.cal-display{font-size:14px;}
       .btn-confirm{font-size:15px;padding:14px 18px;letter-spacing:1px;}
       .main-title{letter-spacing:2px;}
     }
