@@ -25,8 +25,19 @@
   bindCalendars();
   bindTabs();
   bindConfirmButtons();
+  bindBackButton();
 
   document.addEventListener('click', closeAll);
+
+  function bindBackButton(){
+    var backBtn = document.getElementById('backBtn');
+    if(!backBtn) return;
+
+    backBtn.addEventListener('click', function(){
+      if(window.history.length > 1) window.history.back();
+      else window.location.href = 'index.html';
+    });
+  }
 
   function buildPeopleSelects(){
     ['est','tot'].forEach(function(p){
@@ -289,11 +300,18 @@
     document.querySelectorAll('.btn-confirm').forEach(function(btn){
       btn.addEventListener('click', function(){
         var p = btn.getAttribute('data-panel');
-        var pessoasVal = document.getElementById(p + '-p').value;
+        var pessoasInput = document.getElementById(p + '-p');
+        var horarioInput = document.getElementById(p + '-h');
+        var dataInput = document.getElementById(p + '-d');
+        var obsInput = document.getElementById(p + '-obs');
+
+        if(!pessoasInput || !horarioInput || !dataInput || !obsInput) return;
+
+        var pessoasVal = pessoasInput.value;
         var nP = parseInt(pessoasVal, 10);
-        var hor = document.getElementById(p + '-h').value;
-        var dat = document.getElementById(p + '-d').value;
-        var obs = document.getElementById(p + '-obs').value.trim();
+        var hor = horarioInput.value;
+        var dat = dataInput.value;
+        var obs = obsInput.value.trim();
 
         if(pessoasVal === '' || isNaN(nP)){
           showToast('Por favor, informe o numero de pessoas.', true);

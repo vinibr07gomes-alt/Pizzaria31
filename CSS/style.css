@@ -1646,3 +1646,93 @@
 
     border-bottom:1px solid rgba(243,156,18,.12);
 }
+
+/* UTILITÁRIOS E AJUSTES DE CONTEÚDO */
+.section-alt{background:var(--dark-2);}
+.text-center{text-align:center;}
+.btn-icon{font-size:18px;color:currentColor;}
+.btn-wide{font-size:16px;padding:18px 44px;}
+.mobile-link-highlight{color:var(--gold);}
+.price-strong{font-family:'Barlow Condensed',sans-serif;font-weight:800;}
+.price-large{font-size:36px;}
+.rodizio-badge-premium{background:#fff;color:#000;}
+.rodizio-badge-la-carte{background:linear-gradient(135deg,#f39c12,#e67e22);color:#000;}
+.rodizio-note{color:var(--text-sub);font-size:14px;}
+.menu-card-note{color:var(--text-muted);font-size:13px;}
+.beverage-block{margin-bottom:14px;}
+.beverage-label{
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:10px;
+}
+.beverage-chips{display:flex;flex-wrap:wrap;gap:8px;}
+.beverage-chip{
+    background:rgba(243,156,18,0.08);
+    border:1px solid rgba(243,156,18,0.2);
+    border-radius:20px;
+    padding:5px 14px;
+    font-size:13px;
+    color:#ddd;
+}
+.review-source-title{font-weight:700;font-size:15px;}
+.review-action{margin-top:14px;}
+.btn-review{font-size:13px;padding:11px 24px;display:inline-flex;gap:8px;align-items:center;}
+.review-link-card{text-decoration:none;display:block;cursor:pointer;color:inherit;}
+.avatar-blue{background:#4285f4;color:#fff;}
+.avatar-red{background:#ea4335;color:#fff;}
+.avatar-green{background:#34a853;color:#fff;}
+.avatar-yellow{background:#fbbc04;color:#000;}
+.avatar-dark-red{background:#c0392b;color:#fff;}
+.avatar-purple{background:#9b59b6;color:#fff;}
+.avatar-teal{background:#16a085;color:#fff;}
+.avatar-orange{background:#d35400;color:#fff;}
+.career-arrow{font-size:35px;}
+.career-extra{display:none;}
+.contact-narrow{max-width:500px;margin:0 auto;}
+.footer-muted{color:#888;}
+
+@media (max-width: 480px) {
+    section {
+        padding-left: 16px;
+        padding-right: 16px;
+        overflow: hidden;
+    }
+
+    .container,
+    .about-grid,
+    .about-text,
+    .about-img-wrap,
+    .about-stats {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .about-stats {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .stat {
+        padding: 18px 8px;
+    }
+
+    .stat-num {
+        font-size: 30px;
+    }
+
+    .carousel-wrapper {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+        overflow: hidden;
+    }
+
+    .carousel-track-outer,
+    .carousel-track {
+        max-width: 100%;
+    }
+}
